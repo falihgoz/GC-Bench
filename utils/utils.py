@@ -6,6 +6,7 @@ import torch
 import torch.nn as nn
 import random
 import torch_geometric.transforms as T
+
 # from ogb.nodeproppred import PygNodePropPredDataset
 from deeprobust.graph.data import Dataset
 from deeprobust.graph.utils import get_train_val_test
@@ -17,7 +18,13 @@ from sklearn.preprocessing import StandardScaler
 from deeprobust.graph.utils import *
 from torch_geometric.data import NeighborSampler, HeteroData
 from torch_geometric.utils import add_remaining_self_loops, to_undirected
-from torch_geometric.datasets import Planetoid, WebKB, WikipediaNetwork,IMDB, HGBDataset
+from torch_geometric.datasets import (
+    Planetoid,
+    WebKB,
+    WikipediaNetwork,
+    IMDB,
+    HGBDataset,
+)
 import math
 import torch.nn.functional as F
 from torch_geometric.utils import add_self_loops
@@ -37,14 +44,14 @@ def get_dataset(
     if name in ["cora", "citeseer", "pubmed"]:
         dataset = Planetoid(path, name)
     elif name in ["IMDB"]:
-        dataset = IMDB(root=f'{path}/{name}')
-    elif name in ['imdb']:
-        dataset = HGBDataset(root=f'{path}/{name}', name=name)
+        dataset = IMDB(root=f"{path}/{name}")
+    elif name in ["imdb"]:
+        dataset = HGBDataset(root=f"{path}/{name}", name=name)
     # elif name in ["ogbn-arxiv"]:
     #     dataset = PygNodePropPredDataset(name="ogbn-arxiv")
-    elif name in ['cornell', 'texas', 'wisconsin']:
+    elif name in ["cornell", "texas", "wisconsin"]:
         dataset = WebKB(path, name)
-    elif name in ['chameleon', 'squirrel']:
+    elif name in ["chameleon", "squirrel"]:
         dataset = WikipediaNetwork(path, name)
     else:
         raise NotImplementedError
@@ -80,27 +87,33 @@ class Pyg2Dpr(Dataset):
             dataset_name = pyg_data.name
         pyg_data = pyg_data[0]
         n = pyg_data.num_nodes
-        
+
         if isinstance(pyg_data, HeteroData):
             features = []
             edge_index_list = []
             labels = []
             node_offset = 0
             for node_type in pyg_data.node_types:
-                if hasattr(pyg_data[node_type], 'x'):
+                if hasattr(pyg_data[node_type], "x"):
                     features.append(pyg_data[node_type].x.numpy())
                 else:
                     features.append(np.eye(pyg_data[node_type].num_nodes))
-                if 'y' in pyg_data[node_type]:
+                if "y" in pyg_data[node_type]:
                     n_target = pyg_data[node_type].num_nodes
                     dim_target = pyg_data[node_type].x.shape[1]
                     labels.append(pyg_data[node_type].y.numpy())
-                    self.idx_train = mask_to_index(pyg_data[node_type].train_mask, n_target)
-                    if hasattr(pyg_data[node_type], 'val_mask'):
-                        self.idx_val = mask_to_index(pyg_data[node_type].val_mask, n_target)
+                    self.idx_train = mask_to_index(
+                        pyg_data[node_type].train_mask, n_target
+                    )
+                    if hasattr(pyg_data[node_type], "val_mask"):
+                        self.idx_val = mask_to_index(
+                            pyg_data[node_type].val_mask, n_target
+                        )
                     else:
                         self.idx_val = np.array([], dtype=np.int64)
-                    self.idx_test = mask_to_index(pyg_data[node_type].test_mask, n_target)
+                    self.idx_test = mask_to_index(
+                        pyg_data[node_type].test_mask, n_target
+                    )
                     self.name = "Pyg2Dpr"
                 # else:
                 #     labels.append(-1 * np.ones(pyg_data[node_type].x.shape[0], dtype=int))
@@ -108,9 +121,11 @@ class Pyg2Dpr(Dataset):
                 node_offset += num_nodes
             # max_size = max(feature.shape[1] for feature in features)
             padded_features = [
-            np.pad(feature[:, :dim_target], 
-                    ((0, 0), (0, max(0, dim_target - feature.shape[1]))), 
-                    mode='constant')
+                np.pad(
+                    feature[:, :dim_target],
+                    ((0, 0), (0, max(0, dim_target - feature.shape[1]))),
+                    mode="constant",
+                )
                 for feature in features
             ]
             self.features = np.concatenate(padded_features, axis=0)
@@ -130,7 +145,9 @@ class Pyg2Dpr(Dataset):
             self.adj = sp.csr_matrix((data, (row, col)), shape=(n, n))
         else:
             if dataset_name == "ogbn-arxiv":  # symmetrization
-                pyg_data.edge_index = to_undirected(pyg_data.edge_index, pyg_data.num_nodes)
+                pyg_data.edge_index = to_undirected(
+                    pyg_data.edge_index, pyg_data.num_nodes
+                )
 
             self.adj = sp.csr_matrix(
                 (
@@ -168,7 +185,7 @@ class Pyg2Dpr(Dataset):
 
 def mask_to_index(index, size, split_choice=0):
     if len(index.shape) == 2:
-        index = index[:,split_choice]
+        index = index[:, split_choice]
     all_idx = np.arange(size)
     return all_idx[index]
 
@@ -270,15 +287,16 @@ class Transd2Ind:
                     )
                 )
         batch = np.random.permutation(self.class_dict2[c])[:num]
+        batch = torch.tensor(batch, dtype=torch.long)
         out = self.samplers[c].sample(batch)
         return out
 
     def sampling(self, ids_per_cls_train, budget, vecs, d, using_half=True):
         budget_dist_compute = 1000
-        '''
+        """
         if using_half:
             vecs = vecs.half()
-        '''
+        """
         if isinstance(vecs, np.ndarray):
             vecs = torch.from_numpy(vecs)
         vecs = vecs.half()
@@ -287,12 +305,19 @@ class Transd2Ind:
             class_ = list(budget.keys())[i]
             other_cls_ids = list(range(len(ids_per_cls_train)))
             other_cls_ids.pop(i)
-            ids_selected0 = ids_per_cls_train[i] if len(ids_per_cls_train[i]) < budget_dist_compute else random.choices(ids_per_cls_train[i], k=budget_dist_compute)
+            ids_selected0 = (
+                ids_per_cls_train[i]
+                if len(ids_per_cls_train[i]) < budget_dist_compute
+                else random.choices(ids_per_cls_train[i], k=budget_dist_compute)
+            )
 
             dist = []
             vecs_0 = vecs[ids_selected0]
             for j in other_cls_ids:
-                chosen_ids = random.choices(ids_per_cls_train[j], k=min(budget_dist_compute, len(ids_per_cls_train[j])))
+                chosen_ids = random.choices(
+                    ids_per_cls_train[j],
+                    k=min(budget_dist_compute, len(ids_per_cls_train[j])),
+                )
                 vecs_1 = vecs[chosen_ids]
                 if len(chosen_ids) < 26 or len(ids_selected0) < 26:
                     # torch.cdist throws error for tensor smaller than 26
@@ -300,11 +325,15 @@ class Transd2Ind:
                 else:
                     dist.append(torch.cdist(vecs_0, vecs_1))
 
-            #dist = [torch.cdist(vecs[ids_selected0], vecs[random.choices(ids_per_cls_train[j], k=min(budget_dist_compute,len(ids_per_cls_train[j])))]) for j in other_cls_ids]
-            dist_ = torch.cat(dist, dim=-1) # include distance to all the other classes
-            n_selected = (dist_<d).sum(dim=-1)
+            # dist = [torch.cdist(vecs[ids_selected0], vecs[random.choices(ids_per_cls_train[j], k=min(budget_dist_compute,len(ids_per_cls_train[j])))]) for j in other_cls_ids]
+            dist_ = torch.cat(dist, dim=-1)  # include distance to all the other classes
+            n_selected = (dist_ < d).sum(dim=-1)
             rank = n_selected.sort()[1].tolist()
-            current_ids_selected = rank[:budget[class_]] if len(rank) > budget[class_] else random.choices(rank, k=budget[class_])
+            current_ids_selected = (
+                rank[: budget[class_]]
+                if len(rank) > budget[class_]
+                else random.choices(rank, k=budget[class_])
+            )
             ids_selected.extend([ids_per_cls_train[i][j] for j in current_ids_selected])
         return ids_selected
 
@@ -362,37 +391,43 @@ class Transd2Ind:
             return np.array(node_idx).reshape(-1)
 
 
-def init_feat(feat_syn, args, data, syn_class_indices, transductive=True):      
-    feature_init = {}   
+def init_feat(feat_syn, args, data, syn_class_indices, transductive=True):
+    feature_init = {}
+    print(syn_class_indices)
     for c in range(data.nclass):
         features_c = data.feat_train[data.labels_train == c]
         ind = syn_class_indices[c]
-        feat_init = init_feat_c(ind[1]-ind[0], features_c, args.init_way)
+        feat_init = init_feat_c(ind[1] - ind[0], features_c, args.init_way)
         feature_init[c] = feat_init
         if feat_init is None:
-            feature_init[c] = feat_syn[ind[0]: ind[1]]
+            feature_init[c] = feat_syn[ind[0] : ind[1]]
         else:
-            feat_syn[ind[0]: ind[1]] = torch.tensor(feature_init[c])
-    
+            feat_syn[ind[0] : ind[1]] = torch.tensor(feature_init[c])
+
     feat_syn = nn.Parameter(feat_syn)
 
     return feat_syn, feature_init
 
+
 def init_feat_c(nnodes_syn, feat_real, method):
-    if method == 'Center':
-        kmeans_init = KMeans(n_clusters=1, random_state=42, n_init='auto', verbose=1)
+    if method == "Center":
+        kmeans_init = KMeans(n_clusters=1, random_state=42, n_init="auto", verbose=1)
         labels_init = kmeans_init.fit_predict(feat_real)
         feature_init = kmeans_init.cluster_centers_
-    elif method == 'K-Center':
-        kmeans_init = KMeans(n_clusters=nnodes_syn, random_state=42, n_init='auto', verbose=1)
+    elif method == "K-Center":
+        kmeans_init = KMeans(
+            n_clusters=nnodes_syn, random_state=42, n_init="auto", verbose=1
+        )
         labels_init = kmeans_init.fit_predict(feat_real)
         feature_init = kmeans_init.cluster_centers_
-    elif method == 'Random_real':
+    elif method == "Random_real":
         feature_init = np.random.permutation(feat_real)[:nnodes_syn]
-    elif method == 'K-means':
-        kmeans_init = KMeans(nnodes_syn, random_state=42, n_init='auto', verbose=0)
+    elif method == "K-means":
+        kmeans_init = KMeans(nnodes_syn, random_state=42, n_init="auto", verbose=0)
         labels_init = kmeans_init.fit_predict(feat_real)
-        random_sample_indices = [np.random.choice(np.where(labels_init == i)[0]) for i in range(nnodes_syn)]
+        random_sample_indices = [
+            np.random.choice(np.where(labels_init == i)[0]) for i in range(nnodes_syn)
+        ]
         feature_init = feat_real[random_sample_indices]
     else:
         feature_init = None
@@ -436,6 +471,7 @@ def match_loss(gw_syn, gw_real, args, device):
 
     return dis
 
+
 def reshape_gw(gwr, gws):
     shape = gwr.shape
 
@@ -444,19 +480,20 @@ def reshape_gw(gwr, gws):
         gwr = gwr.T
         gws = gws.T
 
-    if len(shape) == 4: # conv, out*in*h*w
+    if len(shape) == 4:  # conv, out*in*h*w
         gwr = gwr.reshape(shape[0], shape[1] * shape[2] * shape[3])
         gws = gws.reshape(shape[0], shape[1] * shape[2] * shape[3])
     elif len(shape) == 3:  # layernorm, C*h*w
         gwr = gwr.reshape(shape[0], shape[1] * shape[2])
         gws = gws.reshape(shape[0], shape[1] * shape[2])
-    elif len(shape) == 2: # linear, out*in
-        tmp = 'do nothing'
-    elif len(shape) == 1: # batchnorm/instancenorm, C; groupnorm x, bias
+    elif len(shape) == 2:  # linear, out*in
+        tmp = "do nothing"
+    elif len(shape) == 1:  # batchnorm/instancenorm, C; groupnorm x, bias
         gwr = gwr.reshape(1, shape[0])
         gws = gws.reshape(1, shape[0])
 
     return gwr, gws
+
 
 def distance_wb(args, gwr, gws):
     shape = gwr.shape
@@ -464,27 +501,39 @@ def distance_wb(args, gwr, gws):
 
     if len(shape) == 1:
         return 0
-    
+
     if args.dis_metric == "ctrl":
         alpha = 1 - args.beta
         beta = args.beta
-        if args.dataset in ['ogbn-arxiv']:
+        if args.dataset in ["ogbn-arxiv"]:
             gradient_sum = torch.sum(torch.abs(gwr))
             threshold = 50
             if gradient_sum < threshold:
-                distance = alpha * (1 - F.cosine_similarity(gwr, gws, dim=-1)) + beta * torch.norm(gwr - gws, dim=-1)
+                distance = alpha * (
+                    1 - F.cosine_similarity(gwr, gws, dim=-1)
+                ) + beta * torch.norm(gwr - gws, dim=-1)
                 return torch.sum(distance)
             else:
-                dis_weight = torch.sum(1 - torch.sum(gwr * gws, dim=-1) / (torch.norm(gwr, dim=-1) * torch.norm(gws, dim=-1) + 0.000001))
+                dis_weight = torch.sum(
+                    1
+                    - torch.sum(gwr * gws, dim=-1)
+                    / (torch.norm(gwr, dim=-1) * torch.norm(gws, dim=-1) + 0.000001)
+                )
                 return torch.sum(dis_weight)
-        elif args.dataset in ['reddit']:
+        elif args.dataset in ["reddit"]:
             gradient_sum = torch.sum(torch.abs(gwr))
             threshold = 50
             if gradient_sum < threshold:
-                distance = alpha * (1 - F.cosine_similarity(gwr, gws, dim=-1)) + beta * torch.norm(gwr - gws, dim=-1)
+                distance = alpha * (
+                    1 - F.cosine_similarity(gwr, gws, dim=-1)
+                ) + beta * torch.norm(gwr - gws, dim=-1)
                 return torch.sum(distance)
             else:
-                dis_weight = torch.sum(1 - torch.sum(gwr * gws, dim=-1) / (torch.norm(gwr, dim=-1) * torch.norm(gws, dim=-1) + 0.000001))
+                dis_weight = torch.sum(
+                    1
+                    - torch.sum(gwr * gws, dim=-1)
+                    / (torch.norm(gwr, dim=-1) * torch.norm(gws, dim=-1) + 0.000001)
+                )
                 return torch.sum(dis_weight)
         else:
             cosine_similarity = F.cosine_similarity(gwr, gws, dim=-1)
@@ -492,7 +541,9 @@ def distance_wb(args, gwr, gws):
 
             distance = alpha * (1 - cosine_similarity) + beta * euclidean_distance
     else:
-        distance = 1 - torch.sum(gwr * gws, dim=-1) / (torch.norm(gwr, dim=-1) * torch.norm(gws, dim=-1) + 0.000001)
+        distance = 1 - torch.sum(gwr * gws, dim=-1) / (
+            torch.norm(gwr, dim=-1) * torch.norm(gws, dim=-1) + 0.000001
+        )
     return torch.sum(distance)
 
 
@@ -620,6 +671,7 @@ def row_normalize_tensor(mx):
     mx = r_mat_inv @ mx
     return mx
 
+
 def get_eval_pool(eval_mode, model, model_eval):
     if eval_mode == "M":  # multiple architectures
         model_eval_pool = [model, "GAT", "MLP", "APPNP", "GraphSage", "Cheby", "GCN"]
@@ -631,7 +683,7 @@ def get_eval_pool(eval_mode, model, model_eval):
 
 
 # neighborhood-based difficulty measurer
-def neighborhood_difficulty_measurer(data, adj, label,device='cuda'):
+def neighborhood_difficulty_measurer(data, adj, label, device="cuda"):
     edge_index = adj.coalesce().indices()
     edge_value = adj.coalesce().values()
 
@@ -659,7 +711,7 @@ def neighborhood_difficulty_measurer(data, adj, label,device='cuda'):
     return local_difficulty.to(device)
 
 
-def neighborhood_difficulty_measurer_in(data, adj, label,device='cuda'):
+def neighborhood_difficulty_measurer_in(data, adj, label, device="cuda"):
     edge_index = adj.coalesce().indices()
     edge_value = adj.coalesce().values()
 
@@ -686,15 +738,15 @@ def neighborhood_difficulty_measurer_in(data, adj, label,device='cuda'):
     return local_difficulty.to(device)
 
 
-def difficulty_measurer(data, adj, label,device='cuda'):
-    local_difficulty = neighborhood_difficulty_measurer(data, adj, label,device=device)
+def difficulty_measurer(data, adj, label, device="cuda"):
+    local_difficulty = neighborhood_difficulty_measurer(data, adj, label, device=device)
     # global_difficulty = feature_difficulty_measurer(data, label, embedding)
     node_difficulty = local_difficulty
     return node_difficulty
 
 
-def sort_training_nodes(data, adj, label,device='cuda'):
-    node_difficulty = difficulty_measurer(data, adj, label,device=device)
+def sort_training_nodes(data, adj, label, device="cuda"):
+    node_difficulty = difficulty_measurer(data, adj, label, device=device)
     _, indices = torch.sort(node_difficulty)
     indices = indices.cpu().numpy()
 
@@ -756,4 +808,3 @@ def fair_metric(pred, labels, sens):
         sum(pred[idx_s0_y1]) / sum(idx_s0_y1) - sum(pred[idx_s1_y1]) / sum(idx_s1_y1)
     )
     return parity.item(), equality.item()
-

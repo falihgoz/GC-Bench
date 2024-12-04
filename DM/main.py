@@ -12,6 +12,7 @@ import torch.nn as nn
 from utils.utils_graph import *
 from utils.utils import *
 from gcdm import GCDM
+from apt_dataset import APT_Dummy
 
 
 def main():
@@ -24,7 +25,7 @@ def main():
     )
     parser.add_argument("--config_dir", type=str, default="configs")
     parser.add_argument("--section", type=str, default="")
-    parser.add_argument("--wandb", type=int, default=1, help="Use wandb")
+    parser.add_argument("--wandb", type=int, default=0, help="Use wandb")
     parser.add_argument("--method", type=str, default="GCDM", help="Method")
     parser.add_argument("--gpu_id", type=int, default=0, help="GPU id")
     parser.add_argument("--dataset", type=str, default="cora", help="Dataset")
@@ -51,7 +52,7 @@ def main():
     parser.add_argument("--transductive", type=int, default=1)
     parser.add_argument("--one_step", type=int, default=0)
     parser.add_argument("--init_way", type=str, default="Random_real")
-    parser.add_argument('--label_rate', type=float, default=1)
+    parser.add_argument("--label_rate", type=float, default=1)
 
     args = parser.parse_args()
     if os.path.exists(args.config_dir + "/" + args.config):
@@ -91,6 +92,10 @@ def main():
     if args.dataset in data_pyg:
         data_full = get_dataset(args.dataset, args.normalize_features, args.data_dir)
         data = Transd2Ind(data_full, keep_ratio=args.keep_ratio)
+    elif args.dataset == "apt_dummy":
+        apt_graph = APT_Dummy(root="./data/apt_dummy")
+        apt_graph = Pyg2Dpr(apt_graph, dataset_name="apt_dummy")
+        data = Transd2Ind(apt_graph, keep_ratio=args.keep_ratio)
     else:
         if args.transductive:
             data = DataGraph(args.dataset, data_dir=args.data_dir)

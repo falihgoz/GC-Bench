@@ -7,12 +7,12 @@ from itertools import product
 
 from torch_geometric.utils import dense_to_sparse
 
-import ot
-from ot.gnn import FGW_distance_to_templates
-from ot.gromov import gromov_wasserstein2
+# import ot
+
+# from ot.gnn import FGW_distance_to_templates
+# from ot.gromov import gromov_wasserstein2
 
 from graph import mx_inv, mx_inv_sqrt, mx_tr
-
 
 
 def get_mgrid(sidelen, dim=2):
@@ -153,17 +153,23 @@ class GraphonLearner(nn.Module):
         # tplt_weights = torch.rand((1, Lx.shape[0]))
         # tplt_weights = tplt_weights / tplt_weights.sum(dim=1, keepdim=True)
         # FGW_distance_to_templates(dense_to_sparse(adj>0.5)[0].cpu(), [torch.tensor(Lx.todense(), dtype=torch.float32)], G_features=c_in.cpu(), tplt_features=tplt_features, tplt_weights=tplt_weights, alpha=torch.tensor(0.5))
-        
+
         if inference:
             return adj
-        elif Lx is None:
+        if Lx is None and self.Lx_inv is None:
             return adj, torch.tensor(0).to(self.device)
-        else:
-            opt_loss = gromov_wasserstein2(
-                C1=adj,
-                C2=torch.tensor(Lx.todense(), dtype=torch.float32).to(adj.device),
-            )
-            return adj, opt_loss 
+        # else:
+        #     opt_loss = gromov_wasserstein2(
+        #         C1=adj,
+        #         C2=torch.tensor(Lx.todense(), dtype=torch.float32).to(adj.device),
+        #     )
+        #     return adj, opt_loss
+
+        try:
+            opt_loss = self.opt_loss(adj)
+        except:
+            opt_loss = torch.tensor(0).to(self.device)
+        return adj, opt_loss
 
     def opt_loss(self, adj):
         Ly_inv_rt, Ly_inv = mx_inv_sqrt(adj)
@@ -175,7 +181,7 @@ class GraphonLearner(nn.Module):
             P = P / P.sum(dim=0, keepdim=True)
 
         eps = 1e4
-        operation_target = (Ly_inv_rt @ self.P.t() @ self.Lx_inv @ self.P @ Ly_inv_rt)
+        operation_target = Ly_inv_rt @ self.P.t() @ self.Lx_inv @ self.P @ Ly_inv_rt
         operation_target[operation_target > eps] = 0.0
         operation_target[operation_target < -eps] = 0.0
 
@@ -186,12 +192,18 @@ class GraphonLearner(nn.Module):
             loss = torch.tensor(0).to(self.device)
         elif condition_number > 1e5:
             # use a more stable SVD to compute the loss
-            _, sqrt, _ = torch.linalg.svd(operation_target + eps * torch.eye(operation_target.size(0)).to(self.device))
+            _, sqrt, _ = torch.linalg.svd(
+                operation_target
+                + eps * torch.eye(operation_target.size(0)).to(self.device)
+            )
             loss = torch.abs(
                 mx_tr(Ly_inv) * m - 2 * torch.sqrt(sqrt.clamp(min=2e-20)).sum()
             )
         else:
-            sqrt = torch.linalg.eigvalsh(operation_target + eps * torch.eye(operation_target.size(0)).to(self.device))
+            sqrt = torch.linalg.eigvalsh(
+                operation_target
+                + eps * torch.eye(operation_target.size(0)).to(self.device)
+            )
             loss = torch.abs(
                 mx_tr(Ly_inv) * m - 2 * torch.sqrt(sqrt.clamp(min=2e-20)).sum()
             )
