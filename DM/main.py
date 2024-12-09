@@ -13,6 +13,7 @@ from utils.utils_graph import *
 from utils.utils import *
 from gcdm import GCDM
 from apt_dataset import APT_Dummy
+from torch_geometric.utils import to_scipy_sparse_matrix
 
 
 def main():
@@ -93,7 +94,53 @@ def main():
         data_full = get_dataset(args.dataset, args.normalize_features, args.data_dir)
         data = Transd2Ind(data_full, keep_ratio=args.keep_ratio)
     elif args.dataset == "apt_dummy":
-        apt_graph = APT_Dummy(root="./data/apt_dummy")
+        num_nodes = 500
+        num_features = 30
+        num_classes = 2
+        nodes = torch.randn((num_nodes, num_features), dtype=torch.float)
+        labels = torch.randint(0, num_classes, (num_nodes,), dtype=torch.long)
+
+        # Generate random edges
+        num_edges = np.random.randint(num_nodes, num_nodes * 2)
+        edge_index = torch.tensor(
+            np.random.randint(0, num_nodes, (2, num_edges)), dtype=torch.long
+        )
+
+        # Compute adjacency matrix
+        adj = to_scipy_sparse_matrix(edge_index, num_nodes=num_nodes).tocoo()
+        adj = torch.sparse_coo_tensor(
+            indices=torch.tensor([adj.row, adj.col]),
+            values=torch.tensor(adj.data),
+            size=(num_nodes, num_nodes),
+            dtype=torch.float,
+        )
+
+        # Split indices into train, val, and test sets
+        all_indices = torch.arange(num_nodes)
+        idx_train, idx_test = train_test_split(
+            all_indices, test_size=0.2, random_state=42
+        )
+        idx_train, idx_val = train_test_split(
+            idx_train, test_size=0.25, random_state=42
+        )
+        # Create masks
+        train_mask = torch.zeros(num_nodes, dtype=torch.bool)
+        val_mask = torch.zeros(num_nodes, dtype=torch.bool)
+        test_mask = torch.zeros(num_nodes, dtype=torch.bool)
+
+        train_mask[idx_train] = True
+        val_mask[idx_val] = True
+        test_mask[idx_test] = True
+
+        apt_graph = Data(
+            x=nodes,
+            y=labels,
+            edge_index=edge_index,
+            adj=adj,  # Include adjacency matrix
+            train_mask=train_mask,
+            val_mask=val_mask,
+            test_mask=test_mask,
+        )
         apt_graph = Pyg2Dpr(apt_graph, dataset_name="apt_dummy")
         data = Transd2Ind(apt_graph, keep_ratio=args.keep_ratio)
     else:
