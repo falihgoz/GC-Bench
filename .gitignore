@@ -142,3 +142,16 @@ wandb
 #private
 data
 save
+
+# temporary gitignore
+trained_weights
+
+# Ignore theia dataset files: all files matching ta1-theia-e3-official-* patterns
+ta1-theia-e3-official-*.json
+ta1-theia-e3-official-*.json.*
+ta1-theia-e3-official-*.json.*.txt
+ta1-theia-e3-official-*.json.tar.gz
+ta1-theia-e3-official-*.json.txt
+theia_*.txt
+
+
