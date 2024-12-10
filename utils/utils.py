@@ -85,7 +85,7 @@ class Pyg2Dpr(Dataset):
             pass
         if dataset_name is None:
             dataset_name = pyg_data.name
-        pyg_data = pyg_data[0]
+        # pyg_data = pyg_data[0]
         n = pyg_data.num_nodes
 
         if isinstance(pyg_data, HeteroData):
