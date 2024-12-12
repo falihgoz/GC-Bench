@@ -19,6 +19,7 @@ from tracing_logging_util import w2v_model_save_file
 from w2v_util import PositionalEncoder, load_w2v_model, infer
 from sklearn.model_selection import train_test_split
 from torch_geometric.utils import to_scipy_sparse_matrix
+from utils_from_flash import *
 
 
 def main():
@@ -61,6 +62,8 @@ def main():
     parser.add_argument("--label_rate", type=float, default=1)
 
     args = parser.parse_args()
+
+    set_seed(args.seed)
     if os.path.exists(args.config_dir + "/" + args.config):
         with open(args.config_dir + "/" + args.config, "r") as config_file:
             config = json.load(config_file)
