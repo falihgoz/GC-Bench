@@ -14,6 +14,7 @@ from utils.utils import *
 from gcdm import GCDM
 from apt_dataset import APT_Dummy
 from torch_geometric.utils import to_scipy_sparse_matrix
+from utils_from_flash import *
 
 
 def main():
@@ -56,6 +57,8 @@ def main():
     parser.add_argument("--label_rate", type=float, default=1)
 
     args = parser.parse_args()
+
+    set_seed(args.seed)
     if os.path.exists(args.config_dir + "/" + args.config):
         with open(args.config_dir + "/" + args.config, "r") as config_file:
             config = json.load(config_file)
