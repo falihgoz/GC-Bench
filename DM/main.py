@@ -178,13 +178,23 @@ def main():
             dtype=torch.float,
         )
         
-        # Split indices into train, val, and test sets
+        # # Split indices into train, val, and test sets
+        # all_indices = torch.arange(num_nodes)
+        # idx_train, idx_test = train_test_split(
+        #     all_indices, test_size=0.2, random_state=42
+        # )
+        # idx_train, idx_val = train_test_split(
+        #     idx_train, test_size=0.25, random_state=42
+        # )
+        
+        # Stratified split for train, test, and validation
         all_indices = torch.arange(num_nodes)
+        print(f"all_indices:{all_indices.shape}")
         idx_train, idx_test = train_test_split(
-            all_indices, test_size=0.2, random_state=42
+            all_indices, test_size=0.2, random_state=42, stratify=labels
         )
         idx_train, idx_val = train_test_split(
-            idx_train, test_size=0.25, random_state=42
+            idx_train, test_size=0.25, random_state=42, stratify=labels[idx_train]
         )
 
         # Create masks
