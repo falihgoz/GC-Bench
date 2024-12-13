@@ -279,15 +279,18 @@ class GCDM:
         adj_syn = pge.inference(feat_syn)
         args = self.args
 
-        if args.save:
-            torch.save(
-                adj_syn,
-                f"{args.save_dir}/{args.method}/adj_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
-            )
-            torch.save(
-                feat_syn,
-                f"{args.save_dir}/{args.method}/feat_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
-            )
+        torch.save(
+            adj_syn,
+            f"{args.save_dir}/{args.method}/adj_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+        )
+        torch.save(
+            feat_syn,
+            f"{args.save_dir}/{args.method}/feat_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+        )
+        torch.save(
+            labels_syn,
+            f"{args.save_dir}/{args.method}/label_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+        )
 
         if self.args.lr_adj == 0:
             n = len(labels_syn)
