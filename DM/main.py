@@ -3,6 +3,9 @@ import os
 
 ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ROOT_DIR)
+
+os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'
+
 import time
 import argparse
 import random

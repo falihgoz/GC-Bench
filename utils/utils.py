@@ -396,7 +396,10 @@ def init_feat(feat_syn, args, data, syn_class_indices, transductive=True):
     print(syn_class_indices)
     for c in range(data.nclass):
         features_c = data.feat_train[data.labels_train == c]
-        ind = syn_class_indices[c]
+        # ind = syn_class_indices[c] # Failed due to --> KeyError: 4
+        ind = syn_class_indices.get(c)
+        if ind is None:
+            continue # Failed due to --> torch.OutOfMemoryError / line 65: "/GC-Bench/networks_nc/parametrized_adj.py"
         feat_init = init_feat_c(ind[1] - ind[0], features_c, args.init_way)
         feature_init[c] = feat_init
         if feat_init is None:
