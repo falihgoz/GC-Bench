@@ -7,7 +7,6 @@ from utils.utils import get_loops, init_feat
 import deeprobust.graph.utils as utils
 import torch.nn.functional as F
 from torch_sparse import SparseTensor
-from torch.cuda.amp import GradScaler, autocast
 
 
 class GCDM:
@@ -15,7 +14,6 @@ class GCDM:
         self.data = data
         self.args = args
         self.device = device
-        self.scaler = GradScaler()
 
         # n = data.nclass * args.nsamples
         syn_label = self.generate_labels_syn(data)
@@ -186,29 +184,24 @@ class GCDM:
 
                 for _ in range(inner_loop):
                     self.optimizer_model.zero_grad()
-                    # Use AMP for the forward pass and loss computation
-                    with autocast():
-                        embedding_syn, _ = model.forward(
-                            feat_syn_inner, adj_syn_inner_norm, get_embedding=True
-                        )
-                        mean_emb_syn = torch.zeros(
-                            (len(labels_unique), embedding_syn.size(1)),
-                            device=embedding_syn.device,
-                        )
-                        for i, label in enumerate(labels_unique):
-                            label_mask = labels_syn == label
-                            mean_emb_syn[i] = torch.mean(
-                                embedding_syn[label_mask], dim=0
-                            )
-                        loss_syn_inner = torch.mean(
-                            (mean_emb_syn - mean_emb_real) ** 2
-                        ).sum()
-
-                    # Backward pass with scaled gradients
-                    self.scaler.scale(loss_syn_inner).backward()
-                    self.scaler.step(self.optimizer_model)
-                    self.scaler.update()
-
+                    embedding_syn, _ = model.forward(
+                        feat_syn_inner, adj_syn_inner_norm, get_embedding=True
+                    )
+                    mean_emb_syn = torch.zeros(
+                        (len(labels_unique), embedding_syn.size(1)),
+                        device=embedding_syn.device,
+                    )
+                    for i, label in enumerate(labels_unique):
+                        label_mask = labels_syn == label
+                        mean_emb_syn[i] = torch.mean(embedding_syn[label_mask], dim=0)
+                    loss_syn_inner = torch.mean(
+                        (mean_emb_syn - mean_emb_real) ** 2
+                    ).sum()
+                    # loss_syn_inner = torch.sum(
+                    #     torch.mean((mean_emb_syn - mean_emb_real) ** 2, dim=1)
+                    # )
+                    loss_syn_inner.backward()
+                    self.optimizer_model.step()
                     with torch.no_grad():
                         embedding_real, _ = model.forward(
                             features, adj, get_embedding=True
@@ -286,15 +279,18 @@ class GCDM:
         adj_syn = pge.inference(feat_syn)
         args = self.args
 
-        if args.save:
-            torch.save(
-                adj_syn,
-                f"{args.save_dir}/{args.method}/adj_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
-            )
-            torch.save(
-                feat_syn,
-                f"{args.save_dir}/{args.method}/feat_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
-            )
+        torch.save(
+            adj_syn,
+            f"{args.save_dir}/{args.method}/adj_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+        )
+        torch.save(
+            feat_syn,
+            f"{args.save_dir}/{args.method}/feat_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+        )
+        torch.save(
+            labels_syn,
+            f"{args.save_dir}/{args.method}/label_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+        )
 
         if self.args.lr_adj == 0:
             n = len(labels_syn)
@@ -312,32 +308,28 @@ class GCDM:
 
         model.eval()
         labels_test = torch.LongTensor(data.labels_test).cuda()
+
         labels_train = torch.LongTensor(data.labels_train).cuda()
+        output = model.predict(data.feat_train, data.adj_train)
+        loss_train = F.nll_loss(output, labels_train)
+        acc_train = utils.accuracy(output, labels_train)
+        if verbose:
+            print(
+                "Train set results:",
+                "loss= {:.4f}".format(loss_train.item()),
+                "accuracy= {:.4f}".format(acc_train.item()),
+            )
+        res.append(acc_train.item())
 
-        # Inference with AMP
-        with torch.no_grad():
-            with autocast():  # Enable AMP for forward passes
-                output = model.predict(data.feat_train, data.adj_train)
-            loss_train = F.nll_loss(output, labels_train)
-            acc_train = utils.accuracy(output, labels_train)
-            if verbose:
-                print(
-                    "Train set results:",
-                    "loss= {:.4f}".format(loss_train.item()),
-                    "accuracy= {:.4f}".format(acc_train.item()),
-                )
-            res.append(acc_train.item())
-
-            # Full graph
-            with autocast():  # Enable AMP for forward passes
-                output = model.predict(data.feat_full, data.adj_full)
-            loss_test = F.nll_loss(output[data.idx_test], labels_test)
-            acc_test = utils.accuracy(output[data.idx_test], labels_test)
-            res.append(acc_test.item())
-            if verbose:
-                print(
-                    "Test set results:",
-                    "loss= {:.4f}".format(loss_test.item()),
-                    "accuracy= {:.4f}".format(acc_test.item()),
-                )
+        # Full graph
+        output = model.predict(data.feat_full, data.adj_full)
+        loss_test = F.nll_loss(output[data.idx_test], labels_test)
+        acc_test = utils.accuracy(output[data.idx_test], labels_test)
+        res.append(acc_test.item())
+        if verbose:
+            print(
+                "Test set results:",
+                "loss= {:.4f}".format(loss_test.item()),
+                "accuracy= {:.4f}".format(acc_test.item()),
+            )
         return res
