@@ -2,7 +2,7 @@
 # [1] https://github.com/DART-Laboratory/Flash-IDS
 # [2] Our contribution
 
-from dataset_prep_util import SupportedDataset, raise_unsupported_dataset
+from utils_apt.dataset_prep_util import SupportedDataset, raise_unsupported_dataset
 
 # ref. [1], [2]
 def w2v_model_save_file(dataset_name: str):

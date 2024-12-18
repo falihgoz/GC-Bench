@@ -1,5 +1,6 @@
 # references:
 # [1] https://github.com/DART-Laboratory/Flash-IDS
+# [2] Our contribution
 
 import gensim
 from gensim.models.callbacks import CallbackAny2Vec
@@ -12,6 +13,9 @@ import math
 import torch
 import numpy as np
 
+## Constants ##
+FLASH_W2V_DIMENSION = 30    # ref. [1]
+##########
 
 # ref. [1], [2]
 class EpochSaver(CallbackAny2Vec):
@@ -61,7 +65,7 @@ def load_w2v_model(save_model_file: str):
     return Word2Vec.load(save_model_file)
 
 # ref. [1]
-def infer(document, w2v_model, encoder_model):
+def w2v_infer(document, w2v_model, encoder_model):
     word_embeddings = [w2v_model.wv[word] for word in document if word in  w2v_model.wv]
     
     if not word_embeddings:
@@ -73,7 +77,3 @@ def infer(document, w2v_model, encoder_model):
 
     output_embedding = output_embedding.detach().cpu().numpy()
     return np.mean(output_embedding, axis=0)
-
-
-
-

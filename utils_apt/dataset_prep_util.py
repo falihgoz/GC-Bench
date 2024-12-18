@@ -267,18 +267,15 @@ def add_attributes(dataset_name: str, d,p):
 
 
 # ref. [1], [2]
-def prep_dataframe(dataset_name: str, test_file_processed_txt: str, file_for_adding_attributes_from_json: str):
+def prep_dataframe(dataset_name: str, file_processed_txt: str, file_for_adding_attributes_from_json: str):
     match dataset_name:
         case SupportedDataset.THEIA3.value:
-            # test_file_processed_txt = "theia_test.txt"
-            # file_for_adding_attributes_from_json = "ta1-theia-e3-official-6r.json.8"
-            
-            test_file = open(test_file_processed_txt)
-            data_raw = test_file.read().split('\n')
+            with open(file_processed_txt, "r") as f:
+                data_raw = f.read().split('\n')
             data_raw = [line.split('\t') for line in data_raw]
-            data_frame = pd.DataFrame (data_raw, columns = ['actorID', 'actor_type','objectID','object','action','timestamp'])
+            data_frame = pd.DataFrame (data_raw, columns = ['actorID','actor_type','objectID','object','action','timestamp'])
             data_frame = data_frame.dropna()
-            data_frame.sort_values(by='timestamp', ascending=True,inplace=True)
+            data_frame.sort_values(by='timestamp', ascending=True, inplace=True)
 
             data_frame = add_attributes(dataset_name, data_frame, file_for_adding_attributes_from_json)
             

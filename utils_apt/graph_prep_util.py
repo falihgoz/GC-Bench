@@ -9,7 +9,7 @@
 from itertools import compress
 from torch_geometric import utils
 
-from dataset_prep_util import SupportedDataset, raise_unsupported_dataset
+from utils_apt.dataset_prep_util import SupportedDataset, raise_unsupported_dataset
 
 ####################
 
@@ -32,8 +32,10 @@ def prepare_graph(dataset_name: str, df):
     match dataset_name:
         case SupportedDataset.THEIA3.value:
             nodes, labels, edges = {}, {}, []
-            dummies = {"SUBJECT_PROCESS":	0, "MemoryObject":	1, "FILE_OBJECT_BLOCK":	2,
+            dummies_copy = {"SUBJECT_PROCESS":	0, "MemoryObject":	1, "FILE_OBJECT_BLOCK":	2,
                     "NetFlowObject":	3,"PRINCIPAL_REMOTE":	4,'PRINCIPAL_LOCAL':5}
+            dummies = {"SUBJECT_PROCESS":	0, "MemoryObject":	1, "FILE_OBJECT_BLOCK":	2,
+                    "NetFlowObject":	3,"PRINCIPAL_REMOTE":	1,'PRINCIPAL_LOCAL':1}
 
             for _, row in df.iterrows():
                 action = row["action"]

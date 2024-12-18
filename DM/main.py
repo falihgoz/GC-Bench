@@ -16,14 +16,17 @@ from utils.utils_graph import *
 from utils.utils import *
 from gcdm import GCDM
 from apt_dataset import APT_Dummy
-from graph_prep_util import prepare_graph
-from dataset_prep_util import prep_dataframe
+from utils_apt.graph_prep_util import prepare_graph
+from utils_apt.dataset_prep_util import prep_dataframe
 from tracing_logging_util import w2v_model_save_file
-from w2v_util import PositionalEncoder, load_w2v_model, infer
+from utils_apt.w2v_util import PositionalEncoder, load_w2v_model, w2v_infer
 from sklearn.model_selection import train_test_split
 from torch_geometric.utils import to_scipy_sparse_matrix
 from utils_from_flash import *
+from utils_apt.util_dataset import get_graph_dataset
 
+def _print_separotor_line():
+    print("--------------------")
 
 def main():
 
@@ -83,7 +86,10 @@ def main():
     torch.manual_seed(args.seed)
     torch.cuda.manual_seed(args.seed)
 
+    _print_separotor_line()
     print(args)
+    print(f"Torch device: id {torch.cuda.current_device()} - {torch.cuda.get_device_name(torch.cuda.current_device())}")
+    _print_separotor_line()
 
     if not os.path.exists(args.data_dir):
         os.makedirs(args.data_dir)
@@ -156,73 +162,8 @@ def main():
         data = Transd2Ind(apt_graph, keep_ratio=args.keep_ratio)
     elif args.dataset == "theia":
         dataset_name = "theia"
-        test_file_processed_txt = "theia_test.txt"
-        file_for_adding_attributes_from_json = "ta1-theia-e3-official-6r.json.8"
         
-        data_frame = prep_dataframe(dataset_name, test_file_processed_txt, file_for_adding_attributes_from_json)
-        phrases,labels,edges,mapp = prepare_graph(dataset_name, data_frame)
-        
-        encoder = PositionalEncoder(30)
-        w2v_model_file = w2v_model_save_file(dataset_name)
-        w2v_model = load_w2v_model(w2v_model_file)
-
-        nodes = [infer(x, w2v_model, encoder) for x in phrases]
-        nodes = np.array(nodes)
-        
-        num_nodes = len(nodes)
-        
-        nodes = torch.tensor(nodes, dtype=torch.float)
-        labels = torch.tensor(labels, dtype=torch.long)
-        edge_index = torch.tensor(edges, dtype=torch.long)
-
-        # Compute adjacency matrix
-        adj = to_scipy_sparse_matrix(edge_index, num_nodes=num_nodes).tocoo()
-        adj = torch.sparse_coo_tensor(
-            indices=torch.tensor([adj.row, adj.col]),
-            values=torch.tensor(adj.data),
-            size=(num_nodes, num_nodes),
-            dtype=torch.float,
-        )
-        
-        # # Split indices into train, val, and test sets
-        # all_indices = torch.arange(num_nodes)
-        # idx_train, idx_test = train_test_split(
-        #     all_indices, test_size=0.2, random_state=42
-        # )
-        # idx_train, idx_val = train_test_split(
-        #     idx_train, test_size=0.25, random_state=42
-        # )
-        
-        # Stratified split for train, test, and validation
-        all_indices = torch.arange(num_nodes)
-        print(f"all_indices:{all_indices.shape}")
-        idx_train, idx_test = train_test_split(
-            all_indices, test_size=0.2, random_state=42, stratify=labels
-        )
-        idx_train, idx_val = train_test_split(
-            idx_train, test_size=0.25, random_state=42, stratify=labels[idx_train]
-        )
-
-        # Create masks
-        train_mask = torch.zeros(num_nodes, dtype=torch.bool)
-        val_mask = torch.zeros(num_nodes, dtype=torch.bool)
-        test_mask = torch.zeros(num_nodes, dtype=torch.bool)
-
-        train_mask[idx_train] = True
-        val_mask[idx_val] = True
-        test_mask[idx_test] = True
-
-        # Create the data object
-        theia_graph = Data(
-            x=nodes,
-            y=labels,
-            edge_index=edge_index,
-            adj=adj,  # Include adjacency matrix
-            train_mask=train_mask,
-            val_mask=val_mask,
-            test_mask=test_mask,
-        )
-        
+        theia_graph = get_graph_dataset(dataset_name)
         
         theia_graph = Pyg2Dpr(theia_graph, dataset_name="theia_dt")
         data = Transd2Ind(theia_graph, keep_ratio=args.keep_ratio)
@@ -235,9 +176,13 @@ def main():
             )
         data_full = data.data_full
 
+    _print_separotor_line()
+    
     agent = GCDM(data, args, device="cuda")
 
     agent.train()
+    
+    _print_separotor_line()
 
 
 if __name__ == "__main__":
