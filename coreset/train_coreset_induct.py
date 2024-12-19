@@ -4,6 +4,9 @@ import os
 
 ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ROOT_DIR)
+
+os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'
+
 import numpy as np
 import random
 import time
@@ -17,6 +20,8 @@ from utils.utils_graph import DataGraph
 from networks_nc.gcn import GCN
 from coreset import KCenter, Herding, Random
 from tqdm import tqdm
+
+from utils_apt.util_dataset import get_graph_dataset
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--gpu_id", type=int, default=0, help="gpu id")
@@ -47,14 +52,25 @@ np.random.seed(args.seed)
 torch.manual_seed(args.seed)
 torch.cuda.manual_seed(args.seed)
 
-data_graphsaint = ["flickr", "reddit", "ogbn-arxiv"]
-if args.dataset in data_graphsaint:
-    data = DataGraph(args.dataset)
-    data_full = data.data_full
-    data = Transd2Ind(data_full, keep_ratio=args.keep_ratio)
+
+APT_MODE = True
+if APT_MODE:
+    if args.dataset == "theia":
+        dataset_name = "theia"
+        
+        theia_graph = get_graph_dataset(dataset_name)
+        
+        theia_graph = Pyg2Dpr(theia_graph, dataset_name="theia_dt")
+        data = Transd2Ind(theia_graph, keep_ratio=args.keep_ratio)
 else:
-    data_full = get_dataset(args.dataset, args.normalize_features)
-    data = Transd2Ind(data_full, keep_ratio=args.keep_ratio)
+    data_graphsaint = ["flickr", "reddit", "ogbn-arxiv"]
+    if args.dataset in data_graphsaint:
+        data = DataGraph(args.dataset)
+        data_full = data.data_full
+        data = Transd2Ind(data_full, keep_ratio=args.keep_ratio)
+    else:
+        data_full = get_dataset(args.dataset, args.normalize_features)
+        data = Transd2Ind(data_full, keep_ratio=args.keep_ratio)
 
 feat_train = data.feat_train
 adj_train = data.adj_train
@@ -117,11 +133,23 @@ directory_path = f"save/{args.method}"
 os.makedirs(directory_path, exist_ok=True)
 
 
-np.save(
-    f"save/{args.method}/idx_{args.dataset}_{args.reduction_rate}_{args.seed}.npy",
-    idx_selected,
-)
+# np.save(
+#     f"save/{args.method}/idx_{args.dataset}_{args.reduction_rate}_{args.seed}.npy",
+#     idx_selected,
+# )
 
+torch.save(
+    adj_train,
+    f"{directory_path}/adj_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+)
+torch.save(
+    feat_train,
+    f"{directory_path}/feat_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+)
+torch.save(
+    labels_train,
+    f"{directory_path}/label_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+)
 
 res = []
 # print('shape of feat_train:', feat_train.shape)

@@ -4,35 +4,23 @@ import os
 ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ROOT_DIR)
 
-# os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'
-
 import argparse
 import numpy as np
 import torch
 from torch_geometric.data import Data
 from torch_geometric.utils import dense_to_sparse
 
-# import pandas as pd
 import numpy as np
-# from sklearn.preprocessing import LabelEncoder
 import torch
 from torch_geometric.data import Data
 import os
-# import torch.nn.functional as F
 import json
 import warnings
-# import matplotlib.pyplot as plt
-# from sklearn.manifold import TSNE
 warnings.filterwarnings('ignore')
 from torch_geometric.loader import NeighborLoader
 import multiprocessing
-# from pprint import pprint
-# import gzip
-# from sklearn.manifold import TSNE
 import json
-# import copy
 from sklearn.utils import class_weight
-# import torch.nn.functional as F
 from torch.nn import CrossEntropyLoss
 from torch_geometric import utils
 
@@ -57,7 +45,8 @@ def main_train_mode(dataset_name: str, model:torch.nn.Module, optimizer:torch.op
     
     print(f"****Executing function main_train_mode({dataset_name}, {type(model)}, {type(optimizer)}, {distillation_method}, {distillation_ratio}):")
     
-    if is_modern_distillation(distillation_method):
+    # if is_modern_distillation(distillation_method):
+    if True:
         adj_path, feature_path, label_path = get_distillion_saved_file_path(dataset_name, distillation_method, distillation_ratio)
         
         print(f"Distilled graph will be loaded from: adjacency ({adj_path}), features ({feature_path}), labels ({label_path})")
@@ -199,9 +188,12 @@ def main():
 
     parser = argparse.ArgumentParser(description="Parameters for APT detection")
     parser.add_argument("--dataset", type=str, default="theia", help="Dataset")
-    parser.add_argument("--mode", type=str, default="train", help="Options: [train, test]")
+    parser.add_argument("--mode", type=str, help="Detection model mode", default="train", choices=["train", "test"])
     
-    parser.add_argument("--dist_method", type=str, default="GCDM", help="Distillation Method")
+    parser.add_argument(
+        "--dist_method", type=str, help="Distillation Method",
+        default="GCDM", choices=["random", "GCDM"]
+    )
     parser.add_argument("--dist_ratio", type=float, default=0.01, help="Reduction ratio at time of distillation")
 
     args = parser.parse_args()
