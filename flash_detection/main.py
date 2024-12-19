@@ -57,9 +57,17 @@ def main_train_mode(dataset_name: str, model:torch.nn.Module, optimizer:torch.op
         
         print(f"Distilled graph is loaded. Adj:{adj.shape}, features(nodes):{feats.shape}, labels:{labels.shape}")
 
-        nodes = feats
-        labels = labels.cpu()
-        edges, _ = dense_to_sparse(adj)
+        if torch.is_tensor(labels):
+            nodes = feats
+            labels = labels.cpu()
+            # print(type(adj)) # <class 'torch.Tensor'>
+            edges, _ = dense_to_sparse(adj)
+        else:
+            nodes = feats
+            labels = labels
+            # print(type(adj)) # <class 'scipy.sparse._csr.csr_matrix'>
+            adj = torch.from_numpy(adj.toarray())
+            edges, _ = dense_to_sparse(adj)
         
         graph = Data(
             x=torch.tensor(nodes, dtype=torch.float).to(device),
@@ -192,7 +200,7 @@ def main():
     
     parser.add_argument(
         "--dist_method", type=str, help="Distillation Method",
-        default="GCDM", choices=["random", "GCDM"]
+        default="GCDM", choices=["random", "herding", "kcenter", "GCDM"]
     )
     parser.add_argument("--dist_ratio", type=float, default=0.01, help="Reduction ratio at time of distillation")
 
