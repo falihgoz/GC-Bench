@@ -16,9 +16,12 @@ def run_command(command: str, output_file: str):
         with open(output_file, 'w') as out_file:
             subprocess.run(command, shell=True, stdout=out_file, stderr=out_file)
         
-        print("Successfully finished.")
+        print(f"Successfull: {command}")
     except subprocess.CalledProcessError as e:
-        print(f"FAILED: {e}")
+        with open(output_file, 'w') as out_file:
+            out_file.write(f"Command {command} failed due to the following: {e}")
+        
+        print(f"Failed: {command}")
 
 def main_exp1(reduction_rates : list[float]):
     supported_datasets = [dataset.value for dataset in SupportedDataset]
@@ -34,13 +37,13 @@ def main_exp1(reduction_rates : list[float]):
                 run_command(command, out_file)
                 
                 # Detector - training:
-                command = f"python flash_detection/main.py --dataset {dataset} --mode train --dist_method {method} --dist_ratio {reduction_rate}"
+                command = f"python flash_detection/detection_main.py --dataset {dataset} --mode train --dist_method {method} --dist_ratio {reduction_rate}"
                 out_file = f"{SAVE_OUTPUT_DIR}/run_2DTC_train_{dataset}_{method}_{reduction_rate}_.txt"
                 print(f"Will run command {command} > {out_file}")
                 run_command(command, out_file)
                 
                 # Detector - training:
-                command = f"python flash_detection/main.py --dataset {dataset} --mode test --dist_method {method} --dist_ratio {reduction_rate}"
+                command = f"python flash_detection/detection_main.py --dataset {dataset} --mode test --dist_method {method} --dist_ratio {reduction_rate}"
                 out_file = f"{SAVE_OUTPUT_DIR}/run_3DTC_test_{dataset}_{method}_{reduction_rate}_.txt"
                 print(f"Will run command {command} > {out_file}")
                 run_command(command, out_file)

@@ -12,7 +12,7 @@ from torch_geometric.utils import dense_to_sparse
 # from ot.gnn import FGW_distance_to_templates
 # from ot.gromov import gromov_wasserstein2
 
-from graph import mx_inv, mx_inv_sqrt, mx_tr
+from GM.graph import mx_inv, mx_inv_sqrt, mx_tr # Fixed; ModuleNotFoundError: No module named 'graph'
 
 
 def get_mgrid(sidelen, dim=2):
