@@ -113,44 +113,65 @@ def main_train_mode(dataset_name: str, model:torch.nn.Module, optimizer:torch.op
     print("****Done - Execution of function main_train_mode")
 
 
-def _save_original_apt_graph_to_file(dataset_name: str, apt_graph):
+def _save_original_apt_graph_to_file(
+    dataset_name: str, nodes:np.ndarray, labels: list, edges: list, mapp: list, all_ids: set
+):
     os.makedirs(f'data/{dataset_name}', exist_ok=True)
-    torch.save(apt_graph, f"data/{dataset_name}/test_processed_graph.pt")
+    
+    np.save(f"data/{dataset_name}/test_processed_nodes.npy", nodes)
+    with open(f"data/{dataset_name}/test_processed_labels.json", 'w') as f:
+        json.dump(labels, f)
+    with open(f"data/{dataset_name}/test_processed_edges.json", 'w') as f:
+        json.dump(edges, f)
+    with open(f"data/{dataset_name}/test_processed_mapp.json", 'w') as f:
+        json.dump(mapp, f)
+    with open(f"data/{dataset_name}/test_processed_allids.json", 'w') as f:
+        json.dump(list(all_ids), f)
 def _load_apt_graph_from_file(dataset_name: str):
-    apt_graph = torch.load(f"data/{dataset_name}/test_processed_graph.pt")
-    return apt_graph
-def _get_test_graph_data():
-    pass
-
-def main_test_mode(dataset_name: str, model:torch.nn.Module):
+    nodes = np.load(f"data/{dataset_name}/test_processed_nodes.npy")
+    with open(f"data/{dataset_name}/test_processed_labels.json", 'r') as f:
+        labels = json.load(f)
+    with open(f"data/{dataset_name}/test_processed_edges.json", 'r') as f:
+        edges = json.load(f)
+    with open(f"data/{dataset_name}/test_processed_mapp.json", 'r') as f:
+        mapp = json.load(f)
+    with open(f"data/{dataset_name}/test_processed_allids.json", 'r') as f:
+        all_ids = set(json.load(f))
     
-    print(f"****Executing function main_test_mode({dataset_name}, {type(model)}):")
-    
+    return nodes, labels, edges, mapp, all_ids
+def _get_test_graph_data(dataset_name: str):
     txt_processed_source, json_attribute_source = get_names_of_test_data_files(dataset_name)
     print(f"source data files: {txt_processed_source}, {json_attribute_source}")
     
+    # data_frame: <class 'pandas.core.frame.DataFrame'>
     data_frame = prep_dataframe(dataset_name, txt_processed_source, json_attribute_source)
+    # node_features: <class 'list'>, labels: <class 'list'>, edges: <class 'list'>, mapp: <class 'list'>
     node_features, labels, edges, mapp = prepare_graph(dataset_name, data_frame)
-    print(type(data_frame))
-    print(type(node_features))
-    print(type(labels))
-    print(type(edges))
-    print(type(mapp))
     
     encoder = PositionalEncoder(FLASH_W2V_DIMENSION)
     w2v_model_file = w2v_model_save_file(dataset_name)
     w2v_model = load_w2v_model(w2v_model_file)
     print(f"w2v model loaded from {w2v_model_file}")
     
-    nodes = [w2v_infer(x, w2v_model, encoder) for x in node_features]
-    print(type(nodes))
-    nodes = np.array(nodes)
-    print(type(nodes))
+    nodes = [w2v_infer(x, w2v_model, encoder) for x in node_features] # <class 'list'>
+    nodes = np.array(nodes) # <class 'numpy.ndarray'>
     print(f"Number of nodes: {len(nodes)}")
     
     all_ids = list(data_frame['actorID']) + list(data_frame['objectID'])
     all_ids = set(all_ids)
     print(f"Length of all_ids: {len(all_ids)}")
+    
+    return nodes, labels, edges, mapp, all_ids
+
+def main_test_mode(dataset_name: str, model:torch.nn.Module, with_load_graph_from_file: bool):
+    
+    print(f"****Executing function main_test_mode({dataset_name}, {type(model)}):")
+    
+    if with_load_graph_from_file:
+        nodes, labels, edges, mapp, all_ids = _load_apt_graph_from_file(dataset_name)
+    else:
+        nodes, labels, edges, mapp, all_ids = _get_test_graph_data(dataset_name)
+        _save_original_apt_graph_to_file(dataset_name, nodes, labels, edges, mapp, all_ids)
     
     gt_path = get_ground_truth_file_path(dataset_name)
     with open(gt_path, "r") as gt_json_file:
@@ -226,7 +247,7 @@ def main():
         distillation_method = f"{args.dist_method}_{args.dist_mode}" if (args.dist_method in ["GCond", "SGDD"]) else args.dist_method
         main_train_mode(args.dataset, dtc_model, dtc_optimizer, distillation_method, args.dist_ratio, args.dist_seed)
     elif args.mode == "test":
-        main_test_mode(args.dataset, dtc_model)
+        main_test_mode(args.dataset, dtc_model, False)
     else:
         print(f"--mode \"{args.mode}\" is not implemented. Supported options are [train, test]")
 
