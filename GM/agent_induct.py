@@ -105,17 +105,19 @@ class GCond:
         args = self.args
 
         if args.save:
+            inductive_agent = "inductive"
+            os.makedirs(f'{args.save_dir}/{args.method}_{inductive_agent}/', exist_ok=True)
             torch.save(
                 adj_syn,
-                f"{args.save_dir}/{args.method}/adj_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+                f"{args.save_dir}/{args.method}_{inductive_agent}/adj_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
             )
             torch.save(
                 feat_syn,
-                f"{args.save_dir}/{args.method}/feat_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+                f"{args.save_dir}/{args.method}_{inductive_agent}/feat_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
             )
             torch.save(
                 labels_syn,
-                f"{args.save_dir}/{args.method}/label_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+                f"{args.save_dir}/{args.method}_{inductive_agent}/label_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
             )
 
         noval = True
@@ -423,6 +425,7 @@ class GCond:
                 3000,
                 4000,
                 5000,
+                self.args.epochs
             ]
             if verbose and it in eval_epochs:
                 # if verbose and (it+1) % 500 == 0:
@@ -439,7 +442,9 @@ class GCond:
             wandb_log["loss_avg"] = loss_avg
             # wandb_log['train_acc_mean'] = train_acc_mean
             wandb_log["test_acc_mean"] = test_acc_mean
-            wandb.log(wandb_log)
+            if args.wandb:
+                import wandb
+                wandb.log(wandb_log)
 
             if loss_avg < previous_loss:
                 previous_loss = loss_avg

@@ -115,13 +115,19 @@ class GCond:
         args = self.args
 
         if self.args.save:
+            transductive_agent = "transductive"
+            os.makedirs(f'{args.save_dir}/{args.method}_{transductive_agent}/', exist_ok=True)
             torch.save(
                 adj_syn,
-                f"{args.save_dir}/{args.method}/adj_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+                f"{args.save_dir}/{args.method}_{transductive_agent}/adj_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
             )
             torch.save(
                 feat_syn,
-                f"{args.save_dir}/{args.method}/feat_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+                f"{args.save_dir}/{args.method}_{transductive_agent}/feat_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
+            )
+            torch.save(
+                labels_syn,
+                f"{args.save_dir}/{args.method}_{transductive_agent}/label_{args.dataset}_{args.reduction_rate}_{args.seed}.pt",
             )
 
         if self.args.lr_adj == 0:
@@ -429,6 +435,7 @@ class GCond:
                 3000,
                 4000,
                 5000,
+                self.args.epochs
             ]
 
             if verbose and it in eval_epochs:
