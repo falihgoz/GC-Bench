@@ -57,12 +57,12 @@ def get_distillion_saved_file_path(dataset_name:str, distillation_method:str, re
     
     return adj_path, feature_path, label_path
 
-def gnn_model_save_file_path(dataset_name: str, epoch: int) -> str:
+def gnn_model_save_file_path(dataset_name: str, epoch: int, distillation_method: str, distillation_rate: float) -> str:
     save_model_file = ""
     
     match dataset_name:
         case SupportedDataset.THEIA3.value:
-            save_model_file = f"trained_weights/theia/lword2vec_gnn_theia{epoch}_E3.pth"
+            save_model_file = f"trained_weights/gnn/theia/lword2vec_{distillation_method}_{distillation_rate}_gnn_{epoch}_E3.pth"
         case _:
             raise_unsupported_dataset(dataset_name)
     

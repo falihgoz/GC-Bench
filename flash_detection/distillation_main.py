@@ -59,6 +59,7 @@ def main(with_load_graph_from_file: bool):
     parser.add_argument("--config", type=str, help="Path to the config JSON file")
     parser.add_argument("--config_dir", type=str)
     parser.add_argument("--section", type=str)
+    parser.add_argument("--wandb_id", type=str)
     parser.add_argument("--sgc", type=int)
     parser.add_argument("--alpha", type=float, help="Regularization term")
     parser.add_argument("--nlayers", type=int, help="Number of layers")
@@ -91,6 +92,7 @@ def main(with_load_graph_from_file: bool):
     parser.add_argument("--sinkhorn_iter",type=int,help="use sinkhorn iteration to warm-up the transport plan.")
     parser.add_argument("--opt_scale", type=float, help="control the scale of the opt loss")
     parser.add_argument("--coreset_method",type=str,choices=["kcenter", "herding", "random"])
+    parser.add_argument("--option",type=int)
 
     args = parser.parse_args()
     
@@ -111,21 +113,24 @@ def main(with_load_graph_from_file: bool):
         SupportedDistillationMethods.GCDM.value
     ]:
         set_args_DM(args)
+        if os.path.exists(args.config_dir + "/" + args.config):
+            with open(args.config_dir + "/" + args.config, "r") as config_file:
+                config = json.load(config_file)
+
+            if args.section in config:
+                section_config = config[args.section]
+
+            for key, value in section_config.items():
+                setattr(args, key, value)
     elif distillation_method in [
         SupportedDistillationMethods.GCOND.value,
         SupportedDistillationMethods.SGDD.value
     ]:
         set_args_GM_NC(args)
+        if os.path.exists(args.config_dir + "/" + args.config):
+            with open(args.config_dir + "/" + args.config, "r") as config_file:
+                config = json.load(config_file)
 
-    if os.path.exists(args.config_dir + "/" + args.config):
-        with open(args.config_dir + "/" + args.config, "r") as config_file:
-            config = json.load(config_file)
-
-        if args.section in config:
-            section_config = config[args.section]
-
-        for key, value in section_config.items():
-            setattr(args, key, value)
     if not os.path.exists(args.data_dir):
         os.makedirs(args.data_dir)
     if not os.path.exists(f"{args.save_dir}/{args.method}"):
@@ -224,11 +229,11 @@ def main(with_load_graph_from_file: bool):
                     break
             data.adj_mx = subgraph
         
-        if args.transductive:
-            from GM.agent_transduct import GCond
-        else:
-            from GM.agent_induct import GCond
-        
+        # if args.transductive:
+        #     from GM.agent_transduct import GCond
+        # else:
+        #     from GM.agent_induct import GCond
+        from GM.agent_induct import GCond
         agent = GCond(data, args, device="cuda")
         
         agent.train()

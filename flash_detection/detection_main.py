@@ -107,7 +107,7 @@ def main_train_mode(dataset_name: str, model:torch.nn.Module, optimizer:torch.op
             subg_n_id_cond = subg.n_id[cond].to(device)
             mask[subg_n_id_cond] = False
 
-        torch.save(model.state_dict(), gnn_model_save_file_path(dataset_name, m_n))
+        torch.save(model.state_dict(), gnn_model_save_file_path(dataset_name, m_n, distillation_method, distillation_ratio))
         print(f'Model# {m_n}. {mask.sum().item()} nodes still misclassified \n')
     
     print("****Done - Execution of function main_train_mode")
@@ -163,7 +163,7 @@ def _get_test_graph_data(dataset_name: str):
     
     return nodes, labels, edges, mapp, all_ids
 
-def main_test_mode(dataset_name: str, model:torch.nn.Module, with_load_graph_from_file: bool):
+def main_test_mode(dataset_name: str, model:torch.nn.Module, distillation_method: str, distillation_rate:float, with_load_graph_from_file: bool):
     
     print(f"****Executing function main_test_mode({dataset_name}, {type(model)}):")
     
@@ -193,7 +193,7 @@ def main_test_mode(dataset_name: str, model:torch.nn.Module, with_load_graph_fro
     
     for m_n in range(EPOCHS):
         model.load_state_dict(
-            torch.load(gnn_model_save_file_path(dataset_name, m_n), map_location=torch.device('cpu'))
+            torch.load(gnn_model_save_file_path(dataset_name, m_n, distillation_method, distillation_rate), map_location=torch.device('cpu'))
         )
         
         loader = NeighborLoader(graph, num_neighbors=[-1,-1], batch_size=BATCH_SIZE)
@@ -231,7 +231,8 @@ def main():
     )
     parser.add_argument("--dist_ratio", type=float, default=0.01, help="Reduction ratio at time of distillation")
     parser.add_argument("--dist_seed", type=int, default=15, help="Seed at the time of distillation")
-    parser.add_argument("--dist_mode", type=str, default="transductive", help="Distilltion mode (only for GCond and SGDD)", choices=["inductive", "transductive"])
+    # parser.add_argument("--dist_mode", type=str, default="transductive", help="Distilltion mode (only for GCond and SGDD)", choices=["inductive", "transductive"])
+    parser.add_argument("--dist_mode", type=str, default="inductive", help="Distilltion mode (only for GCond and SGDD)", choices=["inductive", "transductive"])
 
     args = parser.parse_args()
 
@@ -247,7 +248,7 @@ def main():
         distillation_method = f"{args.dist_method}_{args.dist_mode}" if (args.dist_method in ["GCond", "SGDD"]) else args.dist_method
         main_train_mode(args.dataset, dtc_model, dtc_optimizer, distillation_method, args.dist_ratio, args.dist_seed)
     elif args.mode == "test":
-        main_test_mode(args.dataset, dtc_model, False)
+        main_test_mode(args.dataset, dtc_model, distillation_method, args.dist_ratio, True)
     else:
         print(f"--mode \"{args.mode}\" is not implemented. Supported options are [train, test]")
 
