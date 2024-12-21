@@ -50,9 +50,11 @@ def _print_separotor_line():
 def main_exp1(reduction_rates : list[float]):
     supported_datasets = [dataset.value for dataset in SupportedDataset]
     supported_distillation_methods = [dist_method.value for dist_method in SupportedDistillationMethods]
-   
+    
+    _clean_previous_exp_outputs()
+    
     os.makedirs(f'{SAVE_OUTPUT_DIR}/', exist_ok=True)
-
+    
     for dataset in supported_datasets:
         for method in supported_distillation_methods:
             for reduction_rate in reduction_rates:
