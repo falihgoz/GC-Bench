@@ -20,13 +20,10 @@ def _clean_previous_exp_outputs():
     exp_out_dir = f"{SAVE_OUTPUT_DIR}"
     distillation_model_save_dir = "save"
     detection_model_save_dir = "trained_weights/gnn"
-    nohup_out_file_path = "nohup.out"
     
     _delete_dir_and_its_contents(exp_out_dir)
     _delete_dir_and_its_contents(distillation_model_save_dir)
     _delete_dir_and_its_contents(detection_model_save_dir)
-    if os.path.exists(nohup_out_file_path) and os.path.isfile(nohup_out_file_path):
-        os.remove(nohup_out_file_path)
 
 def _run_command(command: str, output_file: str):
     try:
@@ -90,5 +87,5 @@ def main_exp1(reduction_rates : list[float]):
                 
                 _print_separotor_line()
 
-main_exp1([0.01, 0.005, 0.001])
+main_exp1([0.05, 0.04, 0.03, 0.02, 0.01, 0.009, 0.008, 0.007, 0.006, 0.005, 0.004, 0.003, 0.002, 0.001])
 

@@ -21,7 +21,7 @@ from torch_geometric import utils
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-from utils_apt.util_file_path import get_distillion_saved_file_path, gnn_model_save_file_path, get_names_of_test_data_files, get_ground_truth_file_path, w2v_model_save_file
+from utils_apt.util_file_path import get_distillion_saved_file_path, gnn_model_save_file_path, get_names_of_test_data_files, get_ground_truth_file_path, w2v_model_save_file, gnn_model_save_dir_path
 from utils_apt.flash_params_helper import get_gnn_training_epochs, get_gnn_training_batch_size, get_gnn_triaing_conf_score, get_gnn_testing_conf_score
 from utils_apt.gnn_models import GCN
 from utils_apt.dataset_prep_util import prep_dataframe
@@ -77,6 +77,7 @@ def main_train_mode(dataset_name: str, model:torch.nn.Module, optimizer:torch.op
     BATCH_SIZE = get_gnn_training_batch_size()
     CONF_SCORE = get_gnn_triaing_conf_score(dataset_name)
     
+    os.makedirs(gnn_model_save_dir_path(dataset_name), exist_ok=True)
     for m_n in range(EPOCHS):
         loader = NeighborLoader(graph, num_neighbors=[-1,-1], batch_size=BATCH_SIZE, input_nodes=mask)
         total_loss = 0
@@ -244,8 +245,9 @@ def main():
     dtc_model = GCN(30,4).to(device)
     dtc_optimizer = torch.optim.Adam(dtc_model.parameters(), lr=0.01, weight_decay=5e-4)
 
+    distillation_method = f"{args.dist_method}_{args.dist_mode}" if (args.dist_method in ["GCond", "SGDD"]) else args.dist_method
     if args.mode == "train":
-        distillation_method = f"{args.dist_method}_{args.dist_mode}" if (args.dist_method in ["GCond", "SGDD"]) else args.dist_method
+        # distillation_method = f"{args.dist_method}_{args.dist_mode}" if (args.dist_method in ["GCond", "SGDD"]) else args.dist_method
         main_train_mode(args.dataset, dtc_model, dtc_optimizer, distillation_method, args.dist_ratio, args.dist_seed)
     elif args.mode == "test":
         main_test_mode(args.dataset, dtc_model, distillation_method, args.dist_ratio, True)

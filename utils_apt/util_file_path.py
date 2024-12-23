@@ -67,3 +67,5 @@ def gnn_model_save_file_path(dataset_name: str, epoch: int, distillation_method:
             raise_unsupported_dataset(dataset_name)
     
     return save_model_file
+def gnn_model_save_dir_path(dataset_name: str) -> str:
+    return f"trained_weights/gnn/{dataset_name}"
