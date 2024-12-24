@@ -72,7 +72,7 @@ def main():
         _save_original_apt_graph_to_file_for_distillation(dataset, apt_graph)
         
         nodes, labels, edges, mapp, all_ids = _get_test_graph_data(dataset)
-        _save_original_apt_graph_to_file_for_detection_eval(dataset_name, nodes, labels, edges, mapp, all_ids)
+        _save_original_apt_graph_to_file_for_detection_eval(dataset, nodes, labels, edges, mapp, all_ids)
         print(f"**** Processing dataset {dataset}: DONE ****")
 
 
