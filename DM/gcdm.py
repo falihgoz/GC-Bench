@@ -61,11 +61,6 @@ class GCDM:
             ]
             labels_syn += [c] * num_class_dict[c]
 
-        # self.syn_class_indices[0] = [0, 228]
-        # self.syn_class_indices[1] = [228, 456]
-        # self.syn_class_indices[2] = [456, 684]
-        # self.syn_class_indices[3] = [684, 913]
-        # num_class_dict = {0: 228, 1: 228, 2: 228, 3: 229}
         self.num_class_dict = num_class_dict
         return labels_syn
 

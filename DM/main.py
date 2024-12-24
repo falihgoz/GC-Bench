@@ -3,9 +3,6 @@ import os
 
 ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ROOT_DIR)
-
-os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'
-
 import time
 import argparse
 import random
@@ -15,18 +12,7 @@ import torch.nn as nn
 from utils.utils_graph import *
 from utils.utils import *
 from gcdm import GCDM
-from apt_dataset import APT_Dummy
-from utils_apt.graph_prep_util import prepare_graph
-from utils_apt.dataset_prep_util import prep_dataframe
-from tracing_logging_util import w2v_model_save_file
-from utils_apt.w2v_util import PositionalEncoder, load_w2v_model, w2v_infer
-from sklearn.model_selection import train_test_split
-from torch_geometric.utils import to_scipy_sparse_matrix
-from utils_from_flash import *
-from utils_apt.util_dataset import get_graph_dataset
 
-def _print_separotor_line():
-    print("--------------------")
 
 def main():
 
@@ -38,7 +24,7 @@ def main():
     )
     parser.add_argument("--config_dir", type=str, default="configs")
     parser.add_argument("--section", type=str, default="")
-    parser.add_argument("--wandb", type=int, default=0, help="Use wandb")
+    parser.add_argument("--wandb", type=int, default=1, help="Use wandb")
     parser.add_argument("--method", type=str, default="GCDM", help="Method")
     parser.add_argument("--gpu_id", type=int, default=0, help="GPU id")
     parser.add_argument("--dataset", type=str, default="cora", help="Dataset")
@@ -65,11 +51,9 @@ def main():
     parser.add_argument("--transductive", type=int, default=1)
     parser.add_argument("--one_step", type=int, default=0)
     parser.add_argument("--init_way", type=str, default="Random_real")
-    parser.add_argument("--label_rate", type=float, default=1)
+    parser.add_argument('--label_rate', type=float, default=1)
 
     args = parser.parse_args()
-
-    set_seed(args.seed)
     if os.path.exists(args.config_dir + "/" + args.config):
         with open(args.config_dir + "/" + args.config, "r") as config_file:
             config = json.load(config_file)
@@ -86,10 +70,7 @@ def main():
     torch.manual_seed(args.seed)
     torch.cuda.manual_seed(args.seed)
 
-    _print_separotor_line()
     print(args)
-    print(f"Torch device: id {torch.cuda.current_device()} - {torch.cuda.get_device_name(torch.cuda.current_device())}")
-    _print_separotor_line()
 
     if not os.path.exists(args.data_dir):
         os.makedirs(args.data_dir)
@@ -110,63 +91,6 @@ def main():
     if args.dataset in data_pyg:
         data_full = get_dataset(args.dataset, args.normalize_features, args.data_dir)
         data = Transd2Ind(data_full, keep_ratio=args.keep_ratio)
-    elif args.dataset == "apt_dummy":
-        num_nodes = 500
-        num_features = 30
-        num_classes = 2
-        nodes = torch.randn((num_nodes, num_features), dtype=torch.float)
-        labels = torch.randint(0, num_classes, (num_nodes,), dtype=torch.long)
-
-        # Generate random edges
-        num_edges = np.random.randint(num_nodes, num_nodes * 2)
-        edge_index = torch.tensor(
-            np.random.randint(0, num_nodes, (2, num_edges)), dtype=torch.long
-        )
-
-        # Compute adjacency matrix
-        adj = to_scipy_sparse_matrix(edge_index, num_nodes=num_nodes).tocoo()
-        adj = torch.sparse_coo_tensor(
-            indices=torch.tensor([adj.row, adj.col]),
-            values=torch.tensor(adj.data),
-            size=(num_nodes, num_nodes),
-            dtype=torch.float,
-        )
-
-        # Split indices into train, val, and test sets
-        all_indices = torch.arange(num_nodes)
-        idx_train, idx_test = train_test_split(
-            all_indices, test_size=0.2, random_state=42
-        )
-        idx_train, idx_val = train_test_split(
-            idx_train, test_size=0.25, random_state=42
-        )
-        # Create masks
-        train_mask = torch.zeros(num_nodes, dtype=torch.bool)
-        val_mask = torch.zeros(num_nodes, dtype=torch.bool)
-        test_mask = torch.zeros(num_nodes, dtype=torch.bool)
-
-        train_mask[idx_train] = True
-        val_mask[idx_val] = True
-        test_mask[idx_test] = True
-
-        apt_graph = Data(
-            x=nodes,
-            y=labels,
-            edge_index=edge_index,
-            adj=adj,  # Include adjacency matrix
-            train_mask=train_mask,
-            val_mask=val_mask,
-            test_mask=test_mask,
-        )
-        apt_graph = Pyg2Dpr(apt_graph, dataset_name="apt_dummy")
-        data = Transd2Ind(apt_graph, keep_ratio=args.keep_ratio)
-    elif args.dataset == "theia":
-        dataset_name = "theia"
-        
-        theia_graph = get_graph_dataset(dataset_name)
-        
-        theia_graph = Pyg2Dpr(theia_graph, dataset_name="theia_dt")
-        data = Transd2Ind(theia_graph, keep_ratio=args.keep_ratio)
     else:
         if args.transductive:
             data = DataGraph(args.dataset, data_dir=args.data_dir)
@@ -176,13 +100,9 @@ def main():
             )
         data_full = data.data_full
 
-    _print_separotor_line()
-    
     agent = GCDM(data, args, device="cuda")
 
     agent.train()
-    
-    _print_separotor_line()
 
 
 if __name__ == "__main__":
