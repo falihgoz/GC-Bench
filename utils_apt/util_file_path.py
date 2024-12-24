@@ -78,7 +78,7 @@ def w2v_model_save_file(dataset_name: str) -> str:
             raise_unsupported_dataset(dataset_name)
     
     TRAINED_WEIGHTS_DIRECTORY_PATH = "trained_weights"
-    return f"{TRAINED_WEIGHTS_DIRECTORY_PATH}/{dataset_name}/{save_model_file}"
+    return f"{TRAINED_WEIGHTS_DIRECTORY_PATH}/{save_model_file}"
 
 def get_distillion_saved_file_path(dataset_name:str, distillation_method:str, reduction_ratio: int, dist_seed: int) -> (Tuple[str, str, str] | str):
     adj_path     = f"save/{distillation_method}/adj_{dataset_name}_{reduction_ratio}_{dist_seed}.pt"
