@@ -14,20 +14,18 @@ import json
 import warnings
 warnings.filterwarnings('ignore')
 from torch_geometric.loader import NeighborLoader
-import multiprocessing
 from sklearn.utils import class_weight
 from torch.nn import CrossEntropyLoss
 from torch_geometric import utils
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-from utils_apt.util_file_path import get_distillion_saved_file_path, gnn_model_save_file_path, get_names_of_test_data_files, get_ground_truth_file_path, w2v_model_save_file, gnn_model_save_dir_path
+from utils_apt.util_file_path import get_distillion_saved_file_path, gnn_model_save_file_path, get_ground_truth_file_path, gnn_model_save_dir_path
 from utils_apt.flash_params_helper import get_gnn_training_epochs, get_gnn_training_batch_size, get_gnn_triaing_conf_score, get_gnn_testing_conf_score
 from utils_apt.gnn_models import GCN
-from utils_apt.dataset_prep_util import prep_dataframe
-from utils_apt.graph_prep_util import prepare_graph
-from utils_apt.w2v_util import PositionalEncoder, FLASH_W2V_DIMENSION, load_w2v_model, w2v_infer
 from utils_apt.flash_evaluation_helper import eval_helper
+from utils_apt.util_file_path import get_save_evaluation_graph_data_file_for_detection_input
+from utils_apt.graph_prep_util import graph_number_of_classes
 
 def _print_separotor_line():
     print("--------------------")
@@ -75,7 +73,7 @@ def main_train_mode(dataset_name: str, model:torch.nn.Module, optimizer:torch.op
     
     EPOCHS = get_gnn_training_epochs(dataset_name)
     BATCH_SIZE = get_gnn_training_batch_size()
-    CONF_SCORE = get_gnn_triaing_conf_score(dataset_name)
+    CONF_SCORE = get_gnn_triaing_conf_score()
     
     os.makedirs(gnn_model_save_dir_path(dataset_name), exist_ok=True)
     for m_n in range(EPOCHS):
@@ -114,65 +112,26 @@ def main_train_mode(dataset_name: str, model:torch.nn.Module, optimizer:torch.op
     print("****Done - Execution of function main_train_mode")
 
 
-def _save_original_apt_graph_to_file(
-    dataset_name: str, nodes:np.ndarray, labels: list, edges: list, mapp: list, all_ids: set
-):
-    os.makedirs(f'data/{dataset_name}', exist_ok=True)
-    
-    np.save(f"data/{dataset_name}/test_processed_nodes.npy", nodes)
-    with open(f"data/{dataset_name}/test_processed_labels.json", 'w') as f:
-        json.dump(labels, f)
-    with open(f"data/{dataset_name}/test_processed_edges.json", 'w') as f:
-        json.dump(edges, f)
-    with open(f"data/{dataset_name}/test_processed_mapp.json", 'w') as f:
-        json.dump(mapp, f)
-    with open(f"data/{dataset_name}/test_processed_allids.json", 'w') as f:
-        json.dump(list(all_ids), f)
 def _load_apt_graph_from_file(dataset_name: str):
-    nodes = np.load(f"data/{dataset_name}/test_processed_nodes.npy")
-    with open(f"data/{dataset_name}/test_processed_labels.json", 'r') as f:
+    save_nodes_file, save_labels_file, save_edges_file, save_mapp_file, save_allids_file = get_save_evaluation_graph_data_file_for_detection_input(dataset_name)
+    
+    nodes = np.load(save_nodes_file)
+    with open(save_labels_file, 'r') as f:
         labels = json.load(f)
-    with open(f"data/{dataset_name}/test_processed_edges.json", 'r') as f:
+    with open(save_edges_file, 'r') as f:
         edges = json.load(f)
-    with open(f"data/{dataset_name}/test_processed_mapp.json", 'r') as f:
+    with open(save_mapp_file, 'r') as f:
         mapp = json.load(f)
-    with open(f"data/{dataset_name}/test_processed_allids.json", 'r') as f:
+    with open(save_allids_file, 'r') as f:
         all_ids = set(json.load(f))
     
     return nodes, labels, edges, mapp, all_ids
-def _get_test_graph_data(dataset_name: str):
-    txt_processed_source, json_attribute_source = get_names_of_test_data_files(dataset_name)
-    print(f"source data files: {txt_processed_source}, {json_attribute_source}")
-    
-    # data_frame: <class 'pandas.core.frame.DataFrame'>
-    data_frame = prep_dataframe(dataset_name, txt_processed_source, json_attribute_source)
-    # node_features: <class 'list'>, labels: <class 'list'>, edges: <class 'list'>, mapp: <class 'list'>
-    node_features, labels, edges, mapp = prepare_graph(dataset_name, data_frame)
-    
-    encoder = PositionalEncoder(FLASH_W2V_DIMENSION)
-    w2v_model_file = w2v_model_save_file(dataset_name)
-    w2v_model = load_w2v_model(w2v_model_file)
-    print(f"w2v model loaded from {w2v_model_file}")
-    
-    nodes = [w2v_infer(x, w2v_model, encoder) for x in node_features] # <class 'list'>
-    nodes = np.array(nodes) # <class 'numpy.ndarray'>
-    print(f"Number of nodes: {len(nodes)}")
-    
-    all_ids = list(data_frame['actorID']) + list(data_frame['objectID'])
-    all_ids = set(all_ids)
-    print(f"Length of all_ids: {len(all_ids)}")
-    
-    return nodes, labels, edges, mapp, all_ids
 
-def main_test_mode(dataset_name: str, model:torch.nn.Module, distillation_method: str, distillation_rate:float, with_load_graph_from_file: bool):
+def main_test_mode(dataset_name: str, model:torch.nn.Module, distillation_method: str, distillation_rate:float):
     
     print(f"****Executing function main_test_mode({dataset_name}, {type(model)}):")
     
-    if with_load_graph_from_file:
-        nodes, labels, edges, mapp, all_ids = _load_apt_graph_from_file(dataset_name)
-    else:
-        nodes, labels, edges, mapp, all_ids = _get_test_graph_data(dataset_name)
-        _save_original_apt_graph_to_file(dataset_name, nodes, labels, edges, mapp, all_ids)
+    nodes, labels, edges, mapp, all_ids = _load_apt_graph_from_file(dataset_name)
     
     gt_path = get_ground_truth_file_path(dataset_name)
     with open(gt_path, "r") as gt_json_file:
@@ -241,8 +200,8 @@ def main():
     print(args)
     _print_separotor_line()
     
-    # dtc_model = GCN(30,5).to(device)###########################################################
-    dtc_model = GCN(30,4).to(device)
+    gnn_out_channel = graph_number_of_classes(args.dataset)
+    dtc_model = GCN(30,gnn_out_channel).to(device)
     dtc_optimizer = torch.optim.Adam(dtc_model.parameters(), lr=0.01, weight_decay=5e-4)
 
     distillation_method = f"{args.dist_method}_{args.dist_mode}" if (args.dist_method in ["GCond", "SGDD"]) else args.dist_method
@@ -250,7 +209,7 @@ def main():
         # distillation_method = f"{args.dist_method}_{args.dist_mode}" if (args.dist_method in ["GCond", "SGDD"]) else args.dist_method
         main_train_mode(args.dataset, dtc_model, dtc_optimizer, distillation_method, args.dist_ratio, args.dist_seed)
     elif args.mode == "test":
-        main_test_mode(args.dataset, dtc_model, distillation_method, args.dist_ratio, True)
+        main_test_mode(args.dataset, dtc_model, distillation_method, args.dist_ratio)
     else:
         print(f"--mode \"{args.mode}\" is not implemented. Supported options are [train, test]")
 

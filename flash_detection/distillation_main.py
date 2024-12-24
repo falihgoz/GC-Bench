@@ -17,22 +17,20 @@ import deeprobust.graph.utils as utils
 import torch.nn.functional as F
 from networks_nc.gcn import GCN
 from coreset import KCenter, Herding, Random
-from utils_apt.util_dataset import get_graph_dataset
+from GM.agent_induct import GCond
 from utils_apt.dataset_constants import is_supported_dataset, raise_unsupported_dataset
 from utils_apt.distillation_constants import SupportedDistillationMethods, is_supported_method, raise_unsupported_distillation_method
 from utils_apt.gcbench_args_helper import set_args_coreset, set_args_DM, set_args_GM_NC
+from utils_apt.util_file_path import get_save_graph_data_file_for_distillation_input
 
 def _print_separotor_line():
     print("--------------------")
 
-def _save_original_apt_graph_to_file(dataset_name: str, apt_graph):
-    os.makedirs(f'data/{dataset_name}', exist_ok=True)
-    torch.save(apt_graph, f"data/{dataset_name}/src_processed_graph.pt")
 def _load_apt_graph_from_file(dataset_name: str):
-    apt_graph = torch.load(f"data/{dataset_name}/src_processed_graph.pt")
+    apt_graph = torch.load(get_save_graph_data_file_for_distillation_input(dataset_name))
     return apt_graph
 
-def main(with_load_graph_from_file: bool):
+def main():
 
     parser = argparse.ArgumentParser(description="Parameters for graph distillation")
     #### Required args ####
@@ -74,8 +72,8 @@ def main(with_load_graph_from_file: bool):
     parser.add_argument("--gt", type=int)
     parser.add_argument("--inner", type=int)
     parser.add_argument("--outer", type=int)
-    parser.add_argument("--transductive", type=int)
-    parser.add_argument("--inductive", type=int)
+    parser.add_argument("--transductive", type=int, default=0)
+    parser.add_argument("--inductive", type=int, default=1)
     parser.add_argument("--mlp", type=int)
     parser.add_argument("--one_step", type=int)
     parser.add_argument("--init_way", type=str)
@@ -149,11 +147,7 @@ def main(with_load_graph_from_file: bool):
     print(f"Torch device: id {torch.cuda.current_device()} - {torch.cuda.get_device_name(torch.cuda.current_device())}")
     _print_separotor_line()
     
-    if with_load_graph_from_file:
-        apt_graph = _load_apt_graph_from_file(dataset_name)
-    else:
-        apt_graph = get_graph_dataset(dataset_name)
-        _save_original_apt_graph_to_file(dataset_name, apt_graph)
+    apt_graph = _load_apt_graph_from_file(dataset_name)
     
     apt_graph = Pyg2Dpr(apt_graph, dataset_name=f"{dataset_name}_dt")
     data = Transd2Ind(apt_graph, keep_ratio=args.keep_ratio)
@@ -229,11 +223,6 @@ def main(with_load_graph_from_file: bool):
                     break
             data.adj_mx = subgraph
         
-        # if args.transductive:
-        #     from GM.agent_transduct import GCond
-        # else:
-        #     from GM.agent_induct import GCond
-        from GM.agent_induct import GCond
         agent = GCond(data, args, device="cuda")
         
         agent.train()
@@ -241,4 +230,4 @@ def main(with_load_graph_from_file: bool):
     _print_separotor_line()
 
 if __name__ == "__main__":
-    main(with_load_graph_from_file=True)
+    main()

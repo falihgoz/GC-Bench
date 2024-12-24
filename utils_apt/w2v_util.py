@@ -51,16 +51,6 @@ class PositionalEncoder:
     def embed(self, x):
         return x + self.pe[:x.size(0)]
 
-def train_w2v_model(save_model_file: str, sentences):
-    # w2v_model = Word2Vec(sentences=phrases, vector_size=30, window=5, min_count=1, workers=8,epochs=300,callbacks=[saver,logger])
-    
-    logger = EpochLogger()
-    saver = EpochSaver(save_model_file)
-    
-    w2v_model = Word2Vec(sentences=sentences, vector_size=30, window=5, min_count=1, workers=8,epochs=300,callbacks=[saver,logger])
-    
-    return w2v_model
-
 def load_w2v_model(save_model_file: str):
     return Word2Vec.load(save_model_file)
 

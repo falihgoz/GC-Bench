@@ -1,7 +1,8 @@
+## Keep consistent with GC-Bench [https://github.com/RingBDStack/GC-Bench]
 
 # type(args): <class 'argparse.Namespace'>
 
-# Consistent with /coreset/train_coreset_induct.py
+# Consistent with GC-Bench/coreset/train_coreset_induct.py
 # Related methods: "random", "herding", "kcenter"
 def set_args_coreset(args):
     if args.gpu_id is None:
@@ -31,7 +32,7 @@ def set_args_coreset(args):
     if args.save is None:
         args.save = 0
 
-# Consistent with DM/main.py
+# Consistent with GC-Bench/DM/main.py
 # Related methods: "GCDM"
 def set_args_DM(args):
     if args.config is None:
@@ -92,7 +93,7 @@ def set_args_DM(args):
         args.label_rate = 1
 
 
-# Consistent with GM/main_nc.py
+# Consistent with GC-Bench/GM/main_nc.py
 # Related methods: "GCond", "SGDD"
 def set_args_GM_NC(args):
     if args.config is None:
@@ -181,4 +182,3 @@ def set_args_GM_NC(args):
         args.opt_scale = 0
     if args.coreset_method is None:
         args.coreset_method = "kcenter"
-
