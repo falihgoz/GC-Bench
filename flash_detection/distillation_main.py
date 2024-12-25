@@ -40,7 +40,7 @@ def main():
     )
     parser.add_argument(
         "--dataset", type=str, help="Dataset: Compulsory argument", required=True,
-        choices=["theia"]
+        choices=["theia", "cadets", "trace", "fivedirections"]
     )
     parser.add_argument("--reduction_rate", type=float, help="Reduction rate as a floating point number", required=True)
     #### Common args for all methods ####

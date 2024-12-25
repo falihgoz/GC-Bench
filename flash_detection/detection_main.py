@@ -182,7 +182,10 @@ def main_test_mode(dataset_name: str, model:torch.nn.Module, distillation_method
 def main():
 
     parser = argparse.ArgumentParser(description="Parameters for APT detection")
-    parser.add_argument("--dataset", type=str, help="Dataset", required=True)
+    parser.add_argument(
+        "--dataset", type=str, help="Dataset", required=True,
+        choices=["theia", "cadets", "trace", "fivedirections"]
+    )
     parser.add_argument("--mode", type=str, help="Detection model mode", default="train", choices=["train", "test"], required=True)
     
     parser.add_argument(
