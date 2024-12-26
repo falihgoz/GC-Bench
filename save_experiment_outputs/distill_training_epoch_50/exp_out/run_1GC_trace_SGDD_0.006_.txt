@@ -1,0 +1,29 @@
+--------------------
+Namespace(method='SGDD', dataset='trace', reduction_rate=0.006, gpu_id=0, data_dir='data', save=1, save_dir='save', epochs=50, wandb=0, keep_ratio=1.0, seed=15, debug=0, config='config.json', config_dir='configs', section='', wandb_id='', sgc=1, alpha=0, nlayers=2, hidden=256, lr=None, lr_adj=0.01, lr_feat=0.0001, lr_model=0.0001, weight_decay=0.0, dropout=0.0, normalize_features=True, gt=0, inner=0, outer=20, transductive=0, inductive=1, mlp=None, one_step=0, init_way='Random', label_rate=1, dis_metric='ours', beta=0.5, early_stopping=0, max_epochs_without_improvement=200, prune=0.05, mining=0.001, circulation=20, mx_size=100, ep_ratio=0.5, sinkhorn_iter=10, opt_scale=0, coreset_method='kcenter', option=0)
+Torch device: id 0 - Tesla T4
+--------------------
+size of adj_train: (71442, 71442)
+#edges in adj_train: 79298.0
+--------------------
+target reduced size:428
+actual reduced size:428
+adj_syn: (428, 428) feat_syn: torch.Size([428, 30])
+{7: [0, 1], 4: [1, 2], 10: [2, 9], 3: [9, 18], 5: [18, 76], 1: [76, 166], 8: [166, 428]}
+Traceback (most recent call last):
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/flash_detection/distillation_main.py", line 233, in <module>
+    main()
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/flash_detection/distillation_main.py", line 228, in main
+    agent.train()
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/GM/agent_induct.py", line 291, in train
+    batch_size, n_id, adjs = data.retrieve_class_sampler(
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/utils/utils.py", line 278, in retrieve_class_sampler
+    NeighborSampler(
+  File "/home/ubuntu/miniconda3/envs/gcbench/lib/python3.10/site-packages/torch_geometric/deprecation.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/gcbench/lib/python3.10/site-packages/torch_geometric/loader/neighbor_sampler.py", line 165, in __init__
+    super().__init__(
+  File "/home/ubuntu/miniconda3/envs/gcbench/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 351, in __init__
+    sampler = RandomSampler(dataset, generator=generator)  # type: ignore[arg-type]
+  File "/home/ubuntu/miniconda3/envs/gcbench/lib/python3.10/site-packages/torch/utils/data/sampler.py", line 144, in __init__
+    raise ValueError(f"num_samples should be a positive integer value, but got num_samples={self.num_samples}")
+ValueError: num_samples should be a positive integer value, but got num_samples=0

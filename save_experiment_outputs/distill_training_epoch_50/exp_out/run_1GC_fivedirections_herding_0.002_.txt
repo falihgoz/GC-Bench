@@ -1,0 +1,9 @@
+--------------------
+Namespace(method='herding', dataset='fivedirections', reduction_rate=0.002, gpu_id=0, data_dir='data', save=1, save_dir='save', epochs=50, wandb=0, keep_ratio=1.0, seed=15, debug=0, config=None, config_dir=None, section=None, wandb_id=None, sgc=None, alpha=None, nlayers=2, hidden=256, lr=0.01, lr_adj=None, lr_feat=None, lr_model=None, weight_decay=0.0005, dropout=0.5, normalize_features=True, gt=None, inner=None, outer=None, transductive=0, inductive=1, mlp=0, one_step=None, init_way=None, label_rate=1, dis_metric=None, beta=None, early_stopping=None, max_epochs_without_improvement=None, prune=None, mining=None, circulation=None, mx_size=None, ep_ratio=None, sinkhorn_iter=None, opt_scale=None, coreset_method=None, option=None)
+Torch device: id 0 - Tesla T4
+--------------------
+size of adj_train: (9078, 9078)
+#edges in adj_train: 132079.0
+--------------------
+FUll: Test set results: loss= 0.0560 accuracy= 0.9911
+--------------------

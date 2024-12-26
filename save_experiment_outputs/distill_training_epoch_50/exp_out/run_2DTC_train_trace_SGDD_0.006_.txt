@@ -1,0 +1,19 @@
+--------------------
+Namespace(dataset='trace', mode='train', dist_method='SGDD', dist_ratio=0.006, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(trace, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, SGDD_inductive, 0.006):
+Distilled graph will be loaded from: adjacency (save/SGDD_inductive/adj_trace_0.006_15.pt), features (save/SGDD_inductive/feat_trace_0.006_15.pt), labels (save/SGDD_inductive/label_trace_0.006_15.pt)
+Traceback (most recent call last):
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/flash_detection/detection_main.py", line 223, in <module>
+    main()
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/flash_detection/detection_main.py", line 213, in main
+    main_train_mode(args.dataset, dtc_model, dtc_optimizer, distillation_method, args.dist_ratio, args.dist_seed)
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/flash_detection/detection_main.py", line 41, in main_train_mode
+    adj = torch.load(adj_path)
+  File "/home/ubuntu/miniconda3/envs/gcbench/lib/python3.10/site-packages/torch/serialization.py", line 1065, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/home/ubuntu/miniconda3/envs/gcbench/lib/python3.10/site-packages/torch/serialization.py", line 468, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/ubuntu/miniconda3/envs/gcbench/lib/python3.10/site-packages/torch/serialization.py", line 449, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: 'save/SGDD_inductive/adj_trace_0.006_15.pt'

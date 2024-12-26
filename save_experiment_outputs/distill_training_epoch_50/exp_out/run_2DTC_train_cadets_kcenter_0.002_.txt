@@ -1,0 +1,62 @@
+--------------------
+Namespace(dataset='cadets', mode='train', dist_method='kcenter', dist_ratio=0.002, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(cadets, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, kcenter, 0.002):
+Distilled graph will be loaded from: adjacency (save/kcenter/adj_cadets_0.002_15.pt), features (save/kcenter/feat_cadets_0.002_15.pt), labels (save/kcenter/label_cadets_0.002_15.pt)
+Distilled graph is loaded. Adj:(431, 431), features(nodes):(431, 30), labels:(431,)
+Ready for training.
+1.659809947013855
+Model# 0. 401 nodes still misclassified 
+
+1.6825567483901978
+Model# 1. 13 nodes still misclassified 
+
+1.2725307941436768
+Model# 2. 6 nodes still misclassified 
+
+1.5418710708618164
+Model# 3. 5 nodes still misclassified 
+
+1.3782397508621216
+Model# 4. 5 nodes still misclassified 
+
+1.2271215915679932
+Model# 5. 5 nodes still misclassified 
+
+1.4094181060791016
+Model# 6. 5 nodes still misclassified 
+
+1.0483331680297852
+Model# 7. 4 nodes still misclassified 
+
+1.072493553161621
+Model# 8. 0 nodes still misclassified 
+
+Model# 9. 0 nodes still misclassified 
+
+Model# 10. 0 nodes still misclassified 
+
+Model# 11. 0 nodes still misclassified 
+
+Model# 12. 0 nodes still misclassified 
+
+Model# 13. 0 nodes still misclassified 
+
+Model# 14. 0 nodes still misclassified 
+
+Model# 15. 0 nodes still misclassified 
+
+Model# 16. 0 nodes still misclassified 
+
+Model# 17. 0 nodes still misclassified 
+
+Model# 18. 0 nodes still misclassified 
+
+Model# 19. 0 nodes still misclassified 
+
+Model# 20. 0 nodes still misclassified 
+
+Model# 21. 0 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

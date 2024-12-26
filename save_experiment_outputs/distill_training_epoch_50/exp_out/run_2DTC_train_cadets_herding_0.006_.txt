@@ -1,0 +1,75 @@
+--------------------
+Namespace(dataset='cadets', mode='train', dist_method='herding', dist_ratio=0.006, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(cadets, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, herding, 0.006):
+Distilled graph will be loaded from: adjacency (save/herding/adj_cadets_0.006_15.pt), features (save/herding/feat_cadets_0.006_15.pt), labels (save/herding/label_cadets_0.006_15.pt)
+Distilled graph is loaded. Adj:(1302, 1302), features(nodes):(1302, 30), labels:(1302,)
+Ready for training.
+1.6288373470306396
+Model# 0. 178 nodes still misclassified 
+
+1.6339163780212402
+Model# 1. 131 nodes still misclassified 
+
+1.46602463722229
+Model# 2. 78 nodes still misclassified 
+
+1.3286129236221313
+Model# 3. 45 nodes still misclassified 
+
+1.2789223194122314
+Model# 4. 24 nodes still misclassified 
+
+1.105319857597351
+Model# 5. 17 nodes still misclassified 
+
+1.0380226373672485
+Model# 6. 9 nodes still misclassified 
+
+0.9829286336898804
+Model# 7. 9 nodes still misclassified 
+
+0.9847765564918518
+Model# 8. 9 nodes still misclassified 
+
+0.9589508175849915
+Model# 9. 8 nodes still misclassified 
+
+0.9430331587791443
+Model# 10. 7 nodes still misclassified 
+
+0.9401746392250061
+Model# 11. 7 nodes still misclassified 
+
+0.9284424781799316
+Model# 12. 7 nodes still misclassified 
+
+0.9291602969169617
+Model# 13. 7 nodes still misclassified 
+
+0.9199666976928711
+Model# 14. 7 nodes still misclassified 
+
+0.9037970900535583
+Model# 15. 7 nodes still misclassified 
+
+0.9173080325126648
+Model# 16. 7 nodes still misclassified 
+
+0.9058675765991211
+Model# 17. 7 nodes still misclassified 
+
+0.8970510363578796
+Model# 18. 7 nodes still misclassified 
+
+0.8998520970344543
+Model# 19. 7 nodes still misclassified 
+
+0.893548846244812
+Model# 20. 6 nodes still misclassified 
+
+1.1390901803970337
+Model# 21. 6 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

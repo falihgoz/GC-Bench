@@ -1,0 +1,25 @@
+--------------------
+Namespace(method='GCDM', dataset='cadets', reduction_rate=0.05, gpu_id=0, data_dir='data', save=1, save_dir='save', epochs=50, wandb=0, keep_ratio=1.0, seed=15, debug=0, config='config.json', config_dir='configs', section='', wandb_id=None, sgc=1, alpha=0, nlayers=2, hidden=256, lr=None, lr_adj=0.001, lr_feat=0.001, lr_model=0.01, weight_decay=0.0, dropout=0.0, normalize_features=True, gt=None, inner=0, outer=20, transductive=0, inductive=1, mlp=None, one_step=1, init_way='Random_real', label_rate=1, dis_metric=None, beta=None, early_stopping=None, max_epochs_without_improvement=None, prune=None, mining=None, circulation=None, mx_size=None, ep_ratio=None, sinkhorn_iter=None, opt_scale=None, coreset_method=None, option=None)
+Torch device: id 0 - Tesla T4
+--------------------
+size of adj_train: (217548, 217548)
+#edges in adj_train: 720090.0
+--------------------
+target reduced size:10877
+actual reduced size:10874
+adj_syn: (10874, 10874) feat_syn: torch.Size([10874, 30])
+{4: [0, 172], 3: [172, 367], 0: [367, 1216], 1: [1216, 3265], 2: [3265, 10874]}
+Traceback (most recent call last):
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/flash_detection/distillation_main.py", line 233, in <module>
+    main()
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/flash_detection/distillation_main.py", line 203, in main
+    agent.train()
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/DM/gcdm.py", line 122, in train
+    adj_syn = pge.inference(feat_syn)
+  File "/home/ubuntu/miniconda3/envs/gcbench/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/networks_nc/parametrized_adj.py", line 83, in inference
+    adj_syn = self.forward(x, inference=True)
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/networks_nc/parametrized_adj.py", line 66, in forward
+    x[edge_index[1]]], axis=1)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 13.21 GiB. GPU 0 has a total capacity of 14.58 GiB of which 307.56 MiB is free. Including non-PyTorch memory, this process has 14.28 GiB memory in use. Of the allocated memory 14.15 GiB is allocated by PyTorch, and 17.12 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

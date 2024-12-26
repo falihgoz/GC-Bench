@@ -1,0 +1,19 @@
+--------------------
+Namespace(dataset='trace', mode='test', dist_method='GCDM', dist_ratio=0.008, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_test_mode(trace, <class 'utils_apt.gnn_models.GCN'>):
+Ready for testing.
+Traceback (most recent call last):
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/flash_detection/detection_main.py", line 223, in <module>
+    main()
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/flash_detection/detection_main.py", line 215, in main
+    main_test_mode(args.dataset, dtc_model, distillation_method, args.dist_ratio)
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/flash_detection/detection_main.py", line 156, in main_test_mode
+    torch.load(gnn_model_save_file_path(dataset_name, m_n, distillation_method, distillation_rate), map_location=torch.device('cpu'))
+  File "/home/ubuntu/miniconda3/envs/gcbench/lib/python3.10/site-packages/torch/serialization.py", line 1065, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/home/ubuntu/miniconda3/envs/gcbench/lib/python3.10/site-packages/torch/serialization.py", line 468, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/ubuntu/miniconda3/envs/gcbench/lib/python3.10/site-packages/torch/serialization.py", line 449, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: 'trained_weights/gnn/trace/lword2vec_GCDM_0.008_gnn_0_E3.pth'

@@ -1,0 +1,75 @@
+--------------------
+Namespace(dataset='cadets', mode='train', dist_method='kcenter', dist_ratio=0.006, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(cadets, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, kcenter, 0.006):
+Distilled graph will be loaded from: adjacency (save/kcenter/adj_cadets_0.006_15.pt), features (save/kcenter/feat_cadets_0.006_15.pt), labels (save/kcenter/label_cadets_0.006_15.pt)
+Distilled graph is loaded. Adj:(1302, 1302), features(nodes):(1302, 30), labels:(1302,)
+Ready for training.
+1.6983758211135864
+Model# 0. 1147 nodes still misclassified 
+
+1.72126305103302
+Model# 1. 1082 nodes still misclassified 
+
+1.605950951576233
+Model# 2. 308 nodes still misclassified 
+
+1.5071231126785278
+Model# 3. 292 nodes still misclassified 
+
+1.446263313293457
+Model# 4. 278 nodes still misclassified 
+
+1.358231544494629
+Model# 5. 273 nodes still misclassified 
+
+1.3515539169311523
+Model# 6. 267 nodes still misclassified 
+
+1.3280055522918701
+Model# 7. 261 nodes still misclassified 
+
+1.3495711088180542
+Model# 8. 250 nodes still misclassified 
+
+1.320351481437683
+Model# 9. 238 nodes still misclassified 
+
+1.2795580625534058
+Model# 10. 205 nodes still misclassified 
+
+1.3034976720809937
+Model# 11. 177 nodes still misclassified 
+
+1.2844427824020386
+Model# 12. 166 nodes still misclassified 
+
+1.2525908946990967
+Model# 13. 163 nodes still misclassified 
+
+1.2545047998428345
+Model# 14. 147 nodes still misclassified 
+
+1.2506297826766968
+Model# 15. 139 nodes still misclassified 
+
+1.2266156673431396
+Model# 16. 137 nodes still misclassified 
+
+1.2289377450942993
+Model# 17. 137 nodes still misclassified 
+
+1.22308349609375
+Model# 18. 136 nodes still misclassified 
+
+1.2075763940811157
+Model# 19. 135 nodes still misclassified 
+
+1.205613136291504
+Model# 20. 135 nodes still misclassified 
+
+1.2065691947937012
+Model# 21. 134 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

@@ -1,0 +1,75 @@
+--------------------
+Namespace(dataset='cadets', mode='train', dist_method='SGDD', dist_ratio=0.006, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(cadets, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, SGDD_inductive, 0.006):
+Distilled graph will be loaded from: adjacency (save/SGDD_inductive/adj_cadets_0.006_15.pt), features (save/SGDD_inductive/feat_cadets_0.006_15.pt), labels (save/SGDD_inductive/label_cadets_0.006_15.pt)
+Distilled graph is loaded. Adj:torch.Size([1305, 1305]), features(nodes):torch.Size([1305, 30]), labels:torch.Size([1305])
+Ready for training.
+1.6740546226501465
+Model# 0. 250 nodes still misclassified 
+
+1.5395125150680542
+Model# 1. 164 nodes still misclassified 
+
+1.4712928533554077
+Model# 2. 123 nodes still misclassified 
+
+1.4329880475997925
+Model# 3. 110 nodes still misclassified 
+
+1.3788353204727173
+Model# 4. 100 nodes still misclassified 
+
+1.3555916547775269
+Model# 5. 100 nodes still misclassified 
+
+1.3463484048843384
+Model# 6. 92 nodes still misclassified 
+
+1.3102928400039673
+Model# 7. 92 nodes still misclassified 
+
+1.3048017024993896
+Model# 8. 92 nodes still misclassified 
+
+1.274932622909546
+Model# 9. 91 nodes still misclassified 
+
+1.2680199146270752
+Model# 10. 88 nodes still misclassified 
+
+1.2637590169906616
+Model# 11. 85 nodes still misclassified 
+
+1.2622801065444946
+Model# 12. 85 nodes still misclassified 
+
+1.2367390394210815
+Model# 13. 85 nodes still misclassified 
+
+1.2556300163269043
+Model# 14. 82 nodes still misclassified 
+
+1.244140625
+Model# 15. 82 nodes still misclassified 
+
+1.2346559762954712
+Model# 16. 82 nodes still misclassified 
+
+1.2411986589431763
+Model# 17. 81 nodes still misclassified 
+
+1.2227723598480225
+Model# 18. 81 nodes still misclassified 
+
+1.2282241582870483
+Model# 19. 71 nodes still misclassified 
+
+1.2403652667999268
+Model# 20. 71 nodes still misclassified 
+
+1.2179841995239258
+Model# 21. 70 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

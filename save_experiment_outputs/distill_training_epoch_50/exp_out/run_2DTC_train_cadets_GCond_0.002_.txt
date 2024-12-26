@@ -1,0 +1,75 @@
+--------------------
+Namespace(dataset='cadets', mode='train', dist_method='GCond', dist_ratio=0.002, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(cadets, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, GCond_inductive, 0.002):
+Distilled graph will be loaded from: adjacency (save/GCond_inductive/adj_cadets_0.002_15.pt), features (save/GCond_inductive/feat_cadets_0.002_15.pt), labels (save/GCond_inductive/label_cadets_0.002_15.pt)
+Distilled graph is loaded. Adj:torch.Size([435, 435]), features(nodes):torch.Size([435, 30]), labels:torch.Size([435])
+Ready for training.
+1.6522406339645386
+Model# 0. 91 nodes still misclassified 
+
+1.5960769653320312
+Model# 1. 80 nodes still misclassified 
+
+1.4950244426727295
+Model# 2. 73 nodes still misclassified 
+
+1.445265769958496
+Model# 3. 56 nodes still misclassified 
+
+1.3930647373199463
+Model# 4. 52 nodes still misclassified 
+
+1.361185908317566
+Model# 5. 49 nodes still misclassified 
+
+1.3212488889694214
+Model# 6. 48 nodes still misclassified 
+
+1.3071484565734863
+Model# 7. 34 nodes still misclassified 
+
+1.3227171897888184
+Model# 8. 30 nodes still misclassified 
+
+1.2651798725128174
+Model# 9. 30 nodes still misclassified 
+
+1.2774451971054077
+Model# 10. 29 nodes still misclassified 
+
+1.287772536277771
+Model# 11. 29 nodes still misclassified 
+
+1.2403206825256348
+Model# 12. 29 nodes still misclassified 
+
+1.2262420654296875
+Model# 13. 28 nodes still misclassified 
+
+1.2195764780044556
+Model# 14. 20 nodes still misclassified 
+
+1.2064257860183716
+Model# 15. 20 nodes still misclassified 
+
+1.220428705215454
+Model# 16. 20 nodes still misclassified 
+
+1.2094494104385376
+Model# 17. 20 nodes still misclassified 
+
+1.215755820274353
+Model# 18. 20 nodes still misclassified 
+
+1.2195836305618286
+Model# 19. 19 nodes still misclassified 
+
+1.198869228363037
+Model# 20. 19 nodes still misclassified 
+
+1.210245132446289
+Model# 21. 19 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

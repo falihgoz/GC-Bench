@@ -1,0 +1,75 @@
+--------------------
+Namespace(dataset='cadets', mode='train', dist_method='herding', dist_ratio=0.05, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(cadets, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, herding, 0.05):
+Distilled graph will be loaded from: adjacency (save/herding/adj_cadets_0.05_15.pt), features (save/herding/feat_cadets_0.05_15.pt), labels (save/herding/label_cadets_0.05_15.pt)
+Distilled graph is loaded. Adj:(10874, 10874), features(nodes):(10874, 30), labels:(10874,)
+Ready for training.
+1.6288354180414755
+Model# 0. 812 nodes still misclassified 
+
+1.7855032682418823
+Model# 1. 387 nodes still misclassified 
+
+1.7397191524505615
+Model# 2. 348 nodes still misclassified 
+
+1.6003317832946777
+Model# 3. 286 nodes still misclassified 
+
+1.5018409490585327
+Model# 4. 212 nodes still misclassified 
+
+1.36931574344635
+Model# 5. 145 nodes still misclassified 
+
+1.286042332649231
+Model# 6. 106 nodes still misclassified 
+
+1.3287959098815918
+Model# 7. 104 nodes still misclassified 
+
+1.2620238065719604
+Model# 8. 103 nodes still misclassified 
+
+1.244004726409912
+Model# 9. 103 nodes still misclassified 
+
+1.2549481391906738
+Model# 10. 103 nodes still misclassified 
+
+1.2214778661727905
+Model# 11. 101 nodes still misclassified 
+
+1.23779296875
+Model# 12. 93 nodes still misclassified 
+
+1.227556824684143
+Model# 13. 93 nodes still misclassified 
+
+1.1947956085205078
+Model# 14. 93 nodes still misclassified 
+
+1.2157896757125854
+Model# 15. 93 nodes still misclassified 
+
+1.1799103021621704
+Model# 16. 66 nodes still misclassified 
+
+1.364440679550171
+Model# 17. 65 nodes still misclassified 
+
+1.3608615398406982
+Model# 18. 65 nodes still misclassified 
+
+1.299889326095581
+Model# 19. 63 nodes still misclassified 
+
+1.2745617628097534
+Model# 20. 62 nodes still misclassified 
+
+1.2656477689743042
+Model# 21. 61 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

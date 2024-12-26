@@ -1,0 +1,75 @@
+--------------------
+Namespace(dataset='cadets', mode='train', dist_method='herding', dist_ratio=0.03, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(cadets, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, herding, 0.03):
+Distilled graph will be loaded from: adjacency (save/herding/adj_cadets_0.03_15.pt), features (save/herding/feat_cadets_0.03_15.pt), labels (save/herding/label_cadets_0.03_15.pt)
+Distilled graph is loaded. Adj:(6523, 6523), features(nodes):(6523, 30), labels:(6523,)
+Ready for training.
+1.6878598795590656
+Model# 0. 1108 nodes still misclassified 
+
+1.63617742061615
+Model# 1. 851 nodes still misclassified 
+
+1.561730980873108
+Model# 2. 494 nodes still misclassified 
+
+1.4511407613754272
+Model# 3. 394 nodes still misclassified 
+
+1.307024359703064
+Model# 4. 302 nodes still misclassified 
+
+1.198830485343933
+Model# 5. 193 nodes still misclassified 
+
+1.0927956104278564
+Model# 6. 82 nodes still misclassified 
+
+1.0936946868896484
+Model# 7. 77 nodes still misclassified 
+
+1.031211495399475
+Model# 8. 76 nodes still misclassified 
+
+1.020189642906189
+Model# 9. 76 nodes still misclassified 
+
+0.9951290488243103
+Model# 10. 57 nodes still misclassified 
+
+1.0754274129867554
+Model# 11. 43 nodes still misclassified 
+
+1.0738619565963745
+Model# 12. 40 nodes still misclassified 
+
+1.0253373384475708
+Model# 13. 40 nodes still misclassified 
+
+1.0238515138626099
+Model# 14. 40 nodes still misclassified 
+
+1.0193843841552734
+Model# 15. 40 nodes still misclassified 
+
+1.0169638395309448
+Model# 16. 40 nodes still misclassified 
+
+1.0129038095474243
+Model# 17. 35 nodes still misclassified 
+
+1.0326906442642212
+Model# 18. 17 nodes still misclassified 
+
+1.009531855583191
+Model# 19. 17 nodes still misclassified 
+
+1.0102328062057495
+Model# 20. 17 nodes still misclassified 
+
+1.0090534687042236
+Model# 21. 17 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

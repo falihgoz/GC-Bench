@@ -1,0 +1,9 @@
+--------------------
+Namespace(dataset='cadets', mode='test', dist_method='random', dist_ratio=0.004, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_test_mode(cadets, <class 'utils_apt.gnn_models.GCN'>):
+Ready for testing.
+True Positives/False Positives/False Negatives/True Negatives: 12852/18036/6/247803
+Accuracy: 0.94, Precision: 0.42, Recall: 1.0, Fscore: 0.59
+****Done - Execution of function main_test_mode
+--------------------

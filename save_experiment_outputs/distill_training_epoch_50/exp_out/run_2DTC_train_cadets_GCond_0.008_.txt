@@ -1,0 +1,75 @@
+--------------------
+Namespace(dataset='cadets', mode='train', dist_method='GCond', dist_ratio=0.008, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(cadets, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, GCond_inductive, 0.008):
+Distilled graph will be loaded from: adjacency (save/GCond_inductive/adj_cadets_0.008_15.pt), features (save/GCond_inductive/feat_cadets_0.008_15.pt), labels (save/GCond_inductive/label_cadets_0.008_15.pt)
+Distilled graph is loaded. Adj:torch.Size([1740, 1740]), features(nodes):torch.Size([1740, 30]), labels:torch.Size([1740])
+Ready for training.
+1.6841816902160645
+Model# 0. 1709 nodes still misclassified 
+
+1.588138222694397
+Model# 1. 590 nodes still misclassified 
+
+1.495640754699707
+Model# 2. 360 nodes still misclassified 
+
+1.442674160003662
+Model# 3. 325 nodes still misclassified 
+
+1.4044944047927856
+Model# 4. 290 nodes still misclassified 
+
+1.3804374933242798
+Model# 5. 237 nodes still misclassified 
+
+1.3776774406433105
+Model# 6. 231 nodes still misclassified 
+
+1.3403494358062744
+Model# 7. 230 nodes still misclassified 
+
+1.3269340991973877
+Model# 8. 227 nodes still misclassified 
+
+1.31605863571167
+Model# 9. 226 nodes still misclassified 
+
+1.2884329557418823
+Model# 10. 225 nodes still misclassified 
+
+1.2852288484573364
+Model# 11. 225 nodes still misclassified 
+
+1.2816256284713745
+Model# 12. 225 nodes still misclassified 
+
+1.2673307657241821
+Model# 13. 222 nodes still misclassified 
+
+1.261458396911621
+Model# 14. 222 nodes still misclassified 
+
+1.2604950666427612
+Model# 15. 222 nodes still misclassified 
+
+1.2690761089324951
+Model# 16. 222 nodes still misclassified 
+
+1.260819911956787
+Model# 17. 222 nodes still misclassified 
+
+1.2601293325424194
+Model# 18. 222 nodes still misclassified 
+
+1.2617281675338745
+Model# 19. 202 nodes still misclassified 
+
+1.2479660511016846
+Model# 20. 202 nodes still misclassified 
+
+1.2351367473602295
+Model# 21. 202 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------
