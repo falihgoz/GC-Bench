@@ -1,0 +1,25 @@
+--------------------
+Namespace(method='SGDD', dataset='cadets', reduction_rate=0.05, gpu_id=0, data_dir='data', save=1, save_dir='save', epochs=100, wandb=0, keep_ratio=1.0, seed=15, debug=0, config='config.json', config_dir='configs', section='', wandb_id='', sgc=1, alpha=0, nlayers=2, hidden=256, lr=None, lr_adj=0.01, lr_feat=0.0001, lr_model=0.0001, weight_decay=0.0, dropout=0.0, normalize_features=True, gt=0, inner=0, outer=20, transductive=0, inductive=1, mlp=None, one_step=0, init_way='Random', label_rate=1, dis_metric='ours', beta=0.5, early_stopping=0, max_epochs_without_improvement=200, prune=0.05, mining=0.001, circulation=20, mx_size=100, ep_ratio=0.5, sinkhorn_iter=10, opt_scale=0, coreset_method='kcenter', option=0)
+Torch device: id 0 - Tesla T4
+--------------------
+size of adj_train: (217548, 217548)
+#edges in adj_train: 720090.0
+--------------------
+target reduced size:10877
+actual reduced size:10877
+adj_syn: (10877, 10877) feat_syn: torch.Size([10877, 30])
+{4: [0, 172], 3: [172, 367], 0: [367, 1216], 1: [1216, 3265], 2: [3265, 10877]}
+Traceback (most recent call last):
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/flash_detection/distillation_main.py", line 233, in <module>
+    main()
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/flash_detection/distillation_main.py", line 228, in main
+    agent.train()
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/GM/agent_induct.py", line 269, in train
+    adj_syn, opt_loss = self.pge(self.feat_syn, Lx=data.adj_mx)
+  File "/home/ubuntu/miniconda3/envs/gcbench/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/gcbench/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/FlashGCBenchExperiment/GC-Bench/networks_nc/IGNR.py", line 128, in forward
+    c = torch.cat([c_in[self.edge_index[0]], c_in[self.edge_index[1]]], axis=1)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 13.22 GiB. GPU 0 has a total capacity of 14.58 GiB of which 12.18 GiB is free. Including non-PyTorch memory, this process has 2.40 GiB memory in use. Of the allocated memory 2.26 GiB is allocated by PyTorch, and 27.91 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

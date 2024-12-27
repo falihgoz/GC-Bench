@@ -1,0 +1,75 @@
+--------------------
+Namespace(dataset='cadets', mode='train', dist_method='GCDM', dist_ratio=0.002, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(cadets, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, GCDM, 0.002):
+Distilled graph will be loaded from: adjacency (save/GCDM/adj_cadets_0.002_15.pt), features (save/GCDM/feat_cadets_0.002_15.pt), labels (save/GCDM/label_cadets_0.002_15.pt)
+Distilled graph is loaded. Adj:torch.Size([431, 431]), features(nodes):torch.Size([431, 30]), labels:torch.Size([431])
+Ready for training.
+1.709373950958252
+Model# 0. 108 nodes still misclassified 
+
+1.559618353843689
+Model# 1. 97 nodes still misclassified 
+
+1.4909496307373047
+Model# 2. 45 nodes still misclassified 
+
+1.381090521812439
+Model# 3. 43 nodes still misclassified 
+
+1.3162211179733276
+Model# 4. 40 nodes still misclassified 
+
+1.2594987154006958
+Model# 5. 23 nodes still misclassified 
+
+1.1843994855880737
+Model# 6. 23 nodes still misclassified 
+
+1.1891217231750488
+Model# 7. 23 nodes still misclassified 
+
+1.129955768585205
+Model# 8. 23 nodes still misclassified 
+
+1.1351345777511597
+Model# 9. 23 nodes still misclassified 
+
+1.16666841506958
+Model# 10. 23 nodes still misclassified 
+
+1.1200766563415527
+Model# 11. 14 nodes still misclassified 
+
+1.1016706228256226
+Model# 12. 14 nodes still misclassified 
+
+1.068415641784668
+Model# 13. 14 nodes still misclassified 
+
+1.0704094171524048
+Model# 14. 14 nodes still misclassified 
+
+1.0906519889831543
+Model# 15. 14 nodes still misclassified 
+
+1.0223782062530518
+Model# 16. 13 nodes still misclassified 
+
+1.0738364458084106
+Model# 17. 13 nodes still misclassified 
+
+1.0297144651412964
+Model# 18. 13 nodes still misclassified 
+
+1.039899468421936
+Model# 19. 13 nodes still misclassified 
+
+1.045317530632019
+Model# 20. 13 nodes still misclassified 
+
+1.0212690830230713
+Model# 21. 13 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

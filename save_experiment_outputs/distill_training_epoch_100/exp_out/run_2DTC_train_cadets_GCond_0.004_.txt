@@ -1,0 +1,63 @@
+--------------------
+Namespace(dataset='cadets', mode='train', dist_method='GCond', dist_ratio=0.004, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(cadets, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, GCond_inductive, 0.004):
+Distilled graph will be loaded from: adjacency (save/GCond_inductive/adj_cadets_0.004_15.pt), features (save/GCond_inductive/feat_cadets_0.004_15.pt), labels (save/GCond_inductive/label_cadets_0.004_15.pt)
+Distilled graph is loaded. Adj:torch.Size([870, 870]), features(nodes):torch.Size([870, 30]), labels:torch.Size([870])
+Ready for training.
+1.6983669996261597
+Model# 0. 713 nodes still misclassified 
+
+1.629619836807251
+Model# 1. 684 nodes still misclassified 
+
+1.5963096618652344
+Model# 2. 679 nodes still misclassified 
+
+1.5069983005523682
+Model# 3. 639 nodes still misclassified 
+
+1.4733818769454956
+Model# 4. 57 nodes still misclassified 
+
+1.429015040397644
+Model# 5. 2 nodes still misclassified 
+
+1.42376708984375
+Model# 6. 1 nodes still misclassified 
+
+1.3832974433898926
+Model# 7. 1 nodes still misclassified 
+
+1.3737958669662476
+Model# 8. 1 nodes still misclassified 
+
+1.3270906209945679
+Model# 9. 0 nodes still misclassified 
+
+Model# 10. 0 nodes still misclassified 
+
+Model# 11. 0 nodes still misclassified 
+
+Model# 12. 0 nodes still misclassified 
+
+Model# 13. 0 nodes still misclassified 
+
+Model# 14. 0 nodes still misclassified 
+
+Model# 15. 0 nodes still misclassified 
+
+Model# 16. 0 nodes still misclassified 
+
+Model# 17. 0 nodes still misclassified 
+
+Model# 18. 0 nodes still misclassified 
+
+Model# 19. 0 nodes still misclassified 
+
+Model# 20. 0 nodes still misclassified 
+
+Model# 21. 0 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

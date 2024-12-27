@@ -1,0 +1,9 @@
+--------------------
+Namespace(dataset='theia', mode='test', dist_method='GCDM', dist_ratio=0.008, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_test_mode(theia, <class 'utils_apt.gnn_models.GCN'>):
+Ready for testing.
+True Positives/False Positives/False Negatives/True Negatives: 25319/198837/40/25821
+Accuracy: 0.2, Precision: 0.11, Recall: 1.0, Fscore: 0.2
+****Done - Execution of function main_test_mode
+--------------------

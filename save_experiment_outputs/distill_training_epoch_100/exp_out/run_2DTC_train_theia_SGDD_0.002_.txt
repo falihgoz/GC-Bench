@@ -1,0 +1,54 @@
+--------------------
+Namespace(dataset='theia', mode='train', dist_method='SGDD', dist_ratio=0.002, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(theia, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, SGDD_inductive, 0.002):
+Distilled graph will be loaded from: adjacency (save/SGDD_inductive/adj_theia_0.002_15.pt), features (save/SGDD_inductive/feat_theia_0.002_15.pt), labels (save/SGDD_inductive/label_theia_0.002_15.pt)
+Distilled graph is loaded. Adj:torch.Size([365, 365]), features(nodes):torch.Size([365, 30]), labels:torch.Size([365])
+Ready for training.
+1.5359817743301392
+Model# 0. 348 nodes still misclassified 
+
+1.4603993892669678
+Model# 1. 348 nodes still misclassified 
+
+1.3894281387329102
+Model# 2. 348 nodes still misclassified 
+
+1.3593289852142334
+Model# 3. 8 nodes still misclassified 
+
+1.3265981674194336
+Model# 4. 0 nodes still misclassified 
+
+Model# 5. 0 nodes still misclassified 
+
+Model# 6. 0 nodes still misclassified 
+
+Model# 7. 0 nodes still misclassified 
+
+Model# 8. 0 nodes still misclassified 
+
+Model# 9. 0 nodes still misclassified 
+
+Model# 10. 0 nodes still misclassified 
+
+Model# 11. 0 nodes still misclassified 
+
+Model# 12. 0 nodes still misclassified 
+
+Model# 13. 0 nodes still misclassified 
+
+Model# 14. 0 nodes still misclassified 
+
+Model# 15. 0 nodes still misclassified 
+
+Model# 16. 0 nodes still misclassified 
+
+Model# 17. 0 nodes still misclassified 
+
+Model# 18. 0 nodes still misclassified 
+
+Model# 19. 0 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

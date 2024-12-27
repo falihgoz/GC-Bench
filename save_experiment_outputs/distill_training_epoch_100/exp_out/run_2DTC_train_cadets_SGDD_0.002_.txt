@@ -1,0 +1,75 @@
+--------------------
+Namespace(dataset='cadets', mode='train', dist_method='SGDD', dist_ratio=0.002, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(cadets, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, SGDD_inductive, 0.002):
+Distilled graph will be loaded from: adjacency (save/SGDD_inductive/adj_cadets_0.002_15.pt), features (save/SGDD_inductive/feat_cadets_0.002_15.pt), labels (save/SGDD_inductive/label_cadets_0.002_15.pt)
+Distilled graph is loaded. Adj:torch.Size([435, 435]), features(nodes):torch.Size([435, 30]), labels:torch.Size([435])
+Ready for training.
+1.617963433265686
+Model# 0. 84 nodes still misclassified 
+
+1.5148589611053467
+Model# 1. 52 nodes still misclassified 
+
+1.412376880645752
+Model# 2. 42 nodes still misclassified 
+
+1.37081778049469
+Model# 3. 40 nodes still misclassified 
+
+1.3374658823013306
+Model# 4. 23 nodes still misclassified 
+
+1.2802563905715942
+Model# 5. 17 nodes still misclassified 
+
+1.2818633317947388
+Model# 6. 17 nodes still misclassified 
+
+1.2807594537734985
+Model# 7. 16 nodes still misclassified 
+
+1.2495712041854858
+Model# 8. 15 nodes still misclassified 
+
+1.220503330230713
+Model# 9. 15 nodes still misclassified 
+
+1.2435837984085083
+Model# 10. 15 nodes still misclassified 
+
+1.224734902381897
+Model# 11. 15 nodes still misclassified 
+
+1.2305885553359985
+Model# 12. 15 nodes still misclassified 
+
+1.2158128023147583
+Model# 13. 15 nodes still misclassified 
+
+1.2166976928710938
+Model# 14. 15 nodes still misclassified 
+
+1.2382900714874268
+Model# 15. 15 nodes still misclassified 
+
+1.218939185142517
+Model# 16. 15 nodes still misclassified 
+
+1.1991254091262817
+Model# 17. 15 nodes still misclassified 
+
+1.216235876083374
+Model# 18. 15 nodes still misclassified 
+
+1.1762120723724365
+Model# 19. 15 nodes still misclassified 
+
+1.1682552099227905
+Model# 20. 15 nodes still misclassified 
+
+1.1802890300750732
+Model# 21. 15 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

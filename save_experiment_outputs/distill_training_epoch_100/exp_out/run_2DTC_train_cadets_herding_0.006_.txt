@@ -1,0 +1,60 @@
+--------------------
+Namespace(dataset='cadets', mode='train', dist_method='herding', dist_ratio=0.006, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(cadets, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, herding, 0.006):
+Distilled graph will be loaded from: adjacency (save/herding/adj_cadets_0.006_15.pt), features (save/herding/feat_cadets_0.006_15.pt), labels (save/herding/label_cadets_0.006_15.pt)
+Distilled graph is loaded. Adj:(1302, 1302), features(nodes):(1302, 30), labels:(1302,)
+Ready for training.
+1.6977566480636597
+Model# 0. 389 nodes still misclassified 
+
+1.7192126512527466
+Model# 1. 381 nodes still misclassified 
+
+1.6058160066604614
+Model# 2. 226 nodes still misclassified 
+
+1.5067490339279175
+Model# 3. 19 nodes still misclassified 
+
+1.6774996519088745
+Model# 4. 9 nodes still misclassified 
+
+1.6795823574066162
+Model# 5. 9 nodes still misclassified 
+
+1.5853462219238281
+Model# 6. 0 nodes still misclassified 
+
+Model# 7. 0 nodes still misclassified 
+
+Model# 8. 0 nodes still misclassified 
+
+Model# 9. 0 nodes still misclassified 
+
+Model# 10. 0 nodes still misclassified 
+
+Model# 11. 0 nodes still misclassified 
+
+Model# 12. 0 nodes still misclassified 
+
+Model# 13. 0 nodes still misclassified 
+
+Model# 14. 0 nodes still misclassified 
+
+Model# 15. 0 nodes still misclassified 
+
+Model# 16. 0 nodes still misclassified 
+
+Model# 17. 0 nodes still misclassified 
+
+Model# 18. 0 nodes still misclassified 
+
+Model# 19. 0 nodes still misclassified 
+
+Model# 20. 0 nodes still misclassified 
+
+Model# 21. 0 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

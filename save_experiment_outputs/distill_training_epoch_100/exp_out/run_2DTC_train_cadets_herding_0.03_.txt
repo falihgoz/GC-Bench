@@ -1,0 +1,75 @@
+--------------------
+Namespace(dataset='cadets', mode='train', dist_method='herding', dist_ratio=0.03, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(cadets, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, herding, 0.03):
+Distilled graph will be loaded from: adjacency (save/herding/adj_cadets_0.03_15.pt), features (save/herding/feat_cadets_0.03_15.pt), labels (save/herding/label_cadets_0.03_15.pt)
+Distilled graph is loaded. Adj:(6523, 6523), features(nodes):(6523, 30), labels:(6523,)
+Ready for training.
+1.6728373520143665
+Model# 0. 2207 nodes still misclassified 
+
+1.4306361675262451
+Model# 1. 1 nodes still misclassified 
+
+1.5761103630065918
+Model# 2. 1 nodes still misclassified 
+
+1.2276599407196045
+Model# 3. 1 nodes still misclassified 
+
+1.313784122467041
+Model# 4. 1 nodes still misclassified 
+
+1.1355537176132202
+Model# 5. 1 nodes still misclassified 
+
+1.1817431449890137
+Model# 6. 1 nodes still misclassified 
+
+1.0741804838180542
+Model# 7. 1 nodes still misclassified 
+
+1.063742756843567
+Model# 8. 1 nodes still misclassified 
+
+1.286806344985962
+Model# 9. 1 nodes still misclassified 
+
+1.028035283088684
+Model# 10. 1 nodes still misclassified 
+
+1.0480093955993652
+Model# 11. 1 nodes still misclassified 
+
+0.9996607899665833
+Model# 12. 1 nodes still misclassified 
+
+1.0698108673095703
+Model# 13. 1 nodes still misclassified 
+
+0.9623884558677673
+Model# 14. 1 nodes still misclassified 
+
+1.0222971439361572
+Model# 15. 1 nodes still misclassified 
+
+1.0447853803634644
+Model# 16. 1 nodes still misclassified 
+
+1.0900593996047974
+Model# 17. 1 nodes still misclassified 
+
+1.256543755531311
+Model# 18. 1 nodes still misclassified 
+
+1.0950006246566772
+Model# 19. 1 nodes still misclassified 
+
+0.9654321074485779
+Model# 20. 1 nodes still misclassified 
+
+1.205203890800476
+Model# 21. 1 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

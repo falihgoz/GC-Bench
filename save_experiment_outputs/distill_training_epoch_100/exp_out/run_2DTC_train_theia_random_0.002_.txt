@@ -1,0 +1,51 @@
+--------------------
+Namespace(dataset='theia', mode='train', dist_method='random', dist_ratio=0.002, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(theia, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, random, 0.002):
+Distilled graph will be loaded from: adjacency (save/random/adj_theia_0.002_15.pt), features (save/random/feat_theia_0.002_15.pt), labels (save/random/label_theia_0.002_15.pt)
+Distilled graph is loaded. Adj:(364, 364), features(nodes):(364, 30), labels:(364,)
+Ready for training.
+1.4108030796051025
+Model# 0. 1 nodes still misclassified 
+
+1.1795121431350708
+Model# 1. 0 nodes still misclassified 
+
+Model# 2. 0 nodes still misclassified 
+
+Model# 3. 0 nodes still misclassified 
+
+Model# 4. 0 nodes still misclassified 
+
+Model# 5. 0 nodes still misclassified 
+
+Model# 6. 0 nodes still misclassified 
+
+Model# 7. 0 nodes still misclassified 
+
+Model# 8. 0 nodes still misclassified 
+
+Model# 9. 0 nodes still misclassified 
+
+Model# 10. 0 nodes still misclassified 
+
+Model# 11. 0 nodes still misclassified 
+
+Model# 12. 0 nodes still misclassified 
+
+Model# 13. 0 nodes still misclassified 
+
+Model# 14. 0 nodes still misclassified 
+
+Model# 15. 0 nodes still misclassified 
+
+Model# 16. 0 nodes still misclassified 
+
+Model# 17. 0 nodes still misclassified 
+
+Model# 18. 0 nodes still misclassified 
+
+Model# 19. 0 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------
