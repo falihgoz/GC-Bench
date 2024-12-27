@@ -3,6 +3,7 @@ import sys
 import torch
 import numpy as np
 import json
+import multiprocessing
 
 ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ROOT_DIR)
@@ -64,16 +65,22 @@ def _save_original_apt_graph_to_file_for_detection_eval(
     with open(save_allids_file, 'w') as f:
         json.dump(list(all_ids), f)
 
+def process_dataset(dataset: str):
+    print(f"**** Processing dataset {dataset}: START ****")
+    apt_graph = get_graph_dataset(dataset)
+    _save_original_apt_graph_to_file_for_distillation(dataset, apt_graph)
+    
+    nodes, labels, edges, mapp, all_ids = _get_test_graph_data(dataset)
+    _save_original_apt_graph_to_file_for_detection_eval(dataset, nodes, labels, edges, mapp, all_ids)
+    print(f"**** Processing dataset {dataset}: DONE ****")
+
 def main():
     supported_datasets = [dataset.value for dataset in SupportedDataset]
+    # num_cpus = min(os.cpu_count(), len(supported_datasets))
+    # with multiprocessing.Pool(processes=num_cpus) as pool:
+    #     pool.map(process_dataset, supported_datasets)
     for dataset in supported_datasets:
-        print(f"**** Processing dataset {dataset}: START ****")
-        apt_graph = get_graph_dataset(dataset)
-        _save_original_apt_graph_to_file_for_distillation(dataset, apt_graph)
-        
-        nodes, labels, edges, mapp, all_ids = _get_test_graph_data(dataset)
-        _save_original_apt_graph_to_file_for_detection_eval(dataset, nodes, labels, edges, mapp, all_ids)
-        print(f"**** Processing dataset {dataset}: DONE ****")
+        process_dataset(dataset)
 
 
 main()
