@@ -58,8 +58,8 @@ def _get_dummies_trace():
         "FILE_OBJECT_UNIX_SOCKET": 7, "SRCSINK_UNKNOWN": 8, "NetFlowObject": 10
     } # outputs of experiment 'distill_training_epoch_50
     dummies = {
-        "MemoryObject": 0, "FILE_OBJECT_FILE": 1, "FILE_OBJECT_DIR": 2, "SUBJECT_UNIT": 3,
-        "SRCSINK_UNKNOWN": 4, "NetFlowObject": 5
+        "MemoryObject": 0, "FILE_OBJECT_DIR": 1, "SUBJECT_UNIT": 2,
+        "SRCSINK_UNKNOWN": 3, "NetFlowObject": 4
     }
     
     return dummies
@@ -74,7 +74,7 @@ def _get_dummies_fivedirections():
         'SUBJECT_PROCESS': 0, 'FILE_OBJECT_CHAR': 1, 'NetFlowObject': 6, 'SUBJECT_THREAD': 8
     }
     dummies = {
-        'SUBJECT_PROCESS': 0, 'NetFlowObject': 1, 'SUBJECT_THREAD': 2
+        'SUBJECT_PROCESS': 0, 'VALUE_TYPE_SRC': 1, 'NetFlowObject': 2, 'SUBJECT_THREAD': 3
     }
     
     return dummies
@@ -160,9 +160,9 @@ def graph_number_of_classes(dataset_name: str) -> int:
         case SupportedDataset.CADETS3.value:
             number_of_classes = 5
         case SupportedDataset.TRACE3.value:
-            number_of_classes = 6
+            number_of_classes = 5
         case SupportedDataset.FIVEDIRECTIONS3.value:
-            number_of_classes = 3
+            number_of_classes = 4
         case _:
             raise_unsupported_dataset(dataset_name)
     
