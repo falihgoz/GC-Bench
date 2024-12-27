@@ -48,7 +48,7 @@ def main():
     parser.add_argument("--data_dir", type=str, default="data", help="Data directory")
     parser.add_argument("--save", type=int, default=1)
     parser.add_argument("--save_dir", type=str, default="save", help="Save directory")
-    parser.add_argument("--epochs", type=int, default=50, help="Number of epochs")
+    parser.add_argument("--epochs", type=int, default=100, help="Number of epochs")
     parser.add_argument("--wandb", type=int, default=0, help="Use wandb")
     parser.add_argument("--keep_ratio", type=float, default=1.0)
     parser.add_argument("--seed", type=int, default=15, help="Random seed")
