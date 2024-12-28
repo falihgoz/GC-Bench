@@ -1,0 +1,43 @@
+--------------------
+Namespace(dataset='fivedirections', mode='train', dist_method='herding', dist_ratio=0.01, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(fivedirections, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, herding, 0.01):
+Distilled graph will be loaded from: adjacency (save/herding/adj_fivedirections_0.01_15.pt), features (save/herding/feat_fivedirections_0.01_15.pt), labels (save/herding/label_fivedirections_0.01_15.pt)
+Distilled graph is loaded. Adj:(128, 128), features(nodes):(128, 30), labels:(128,)
+Ready for training.
+1.580280065536499
+Model# 0. 47 nodes still misclassified 
+
+1.5792635679244995
+Model# 1. 8 nodes still misclassified 
+
+1.3076564073562622
+Model# 2. 6 nodes still misclassified 
+
+1.4403783082962036
+Model# 3. 6 nodes still misclassified 
+
+1.390002965927124
+Model# 4. 3 nodes still misclassified 
+
+1.322973370552063
+Model# 5. 3 nodes still misclassified 
+
+1.3545541763305664
+Model# 6. 1 nodes still misclassified 
+
+0.9121116399765015
+Model# 7. 0 nodes still misclassified 
+
+Model# 8. 0 nodes still misclassified 
+
+Model# 9. 0 nodes still misclassified 
+
+Model# 10. 0 nodes still misclassified 
+
+Model# 11. 0 nodes still misclassified 
+
+Model# 12. 0 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

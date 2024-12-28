@@ -1,0 +1,42 @@
+--------------------
+Namespace(dataset='fivedirections', mode='train', dist_method='kcenter', dist_ratio=0.03, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(fivedirections, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, kcenter, 0.03):
+Distilled graph will be loaded from: adjacency (save/kcenter/adj_fivedirections_0.03_15.pt), features (save/kcenter/feat_fivedirections_0.03_15.pt), labels (save/kcenter/label_fivedirections_0.03_15.pt)
+Distilled graph is loaded. Adj:(388, 388), features(nodes):(388, 30), labels:(388,)
+Ready for training.
+1.5281060934066772
+Model# 0. 257 nodes still misclassified 
+
+1.5860382318496704
+Model# 1. 223 nodes still misclassified 
+
+1.4023419618606567
+Model# 2. 190 nodes still misclassified 
+
+1.2805227041244507
+Model# 3. 117 nodes still misclassified 
+
+1.2567782402038574
+Model# 4. 1 nodes still misclassified 
+
+1.3958237171173096
+Model# 5. 1 nodes still misclassified 
+
+1.4356995820999146
+Model# 6. 0 nodes still misclassified 
+
+Model# 7. 0 nodes still misclassified 
+
+Model# 8. 0 nodes still misclassified 
+
+Model# 9. 0 nodes still misclassified 
+
+Model# 10. 0 nodes still misclassified 
+
+Model# 11. 0 nodes still misclassified 
+
+Model# 12. 0 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

@@ -1,0 +1,48 @@
+--------------------
+Namespace(dataset='fivedirections', mode='train', dist_method='SGDD', dist_ratio=0.05, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(fivedirections, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, SGDD_inductive, 0.05):
+Distilled graph will be loaded from: adjacency (save/SGDD_inductive/adj_fivedirections_0.05_15.pt), features (save/SGDD_inductive/feat_fivedirections_0.05_15.pt), labels (save/SGDD_inductive/label_fivedirections_0.05_15.pt)
+Distilled graph is loaded. Adj:torch.Size([651, 651]), features(nodes):torch.Size([651, 30]), labels:torch.Size([651])
+Ready for training.
+1.4790897369384766
+Model# 0. 267 nodes still misclassified 
+
+1.2695624828338623
+Model# 1. 179 nodes still misclassified 
+
+1.1842888593673706
+Model# 2. 175 nodes still misclassified 
+
+1.165503978729248
+Model# 3. 170 nodes still misclassified 
+
+1.1183819770812988
+Model# 4. 170 nodes still misclassified 
+
+1.0794004201889038
+Model# 5. 168 nodes still misclassified 
+
+1.0734083652496338
+Model# 6. 168 nodes still misclassified 
+
+1.0671132802963257
+Model# 7. 168 nodes still misclassified 
+
+1.0523643493652344
+Model# 8. 167 nodes still misclassified 
+
+1.0700875520706177
+Model# 9. 167 nodes still misclassified 
+
+1.038434624671936
+Model# 10. 167 nodes still misclassified 
+
+1.010375738143921
+Model# 11. 167 nodes still misclassified 
+
+0.9946158528327942
+Model# 12. 167 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------

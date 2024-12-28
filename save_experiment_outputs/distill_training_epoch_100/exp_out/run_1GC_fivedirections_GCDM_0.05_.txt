@@ -1,0 +1,29 @@
+--------------------
+Namespace(method='GCDM', dataset='fivedirections', reduction_rate=0.05, gpu_id=0, data_dir='data', save=1, save_dir='save', epochs=100, wandb=0, keep_ratio=1.0, seed=15, debug=0, config='config.json', config_dir='configs', section='', wandb_id=None, sgc=1, alpha=0, nlayers=2, hidden=256, lr=None, lr_adj=0.001, lr_feat=0.001, lr_model=0.01, weight_decay=0.0, dropout=0.0, normalize_features=True, gt=None, inner=0, outer=20, transductive=0, inductive=1, mlp=None, one_step=1, init_way='Random_real', label_rate=1, dis_metric=None, beta=None, early_stopping=None, max_epochs_without_improvement=None, prune=None, mining=None, circulation=None, mx_size=None, ep_ratio=None, sinkhorn_iter=None, opt_scale=None, coreset_method=None, option=None)
+Torch device: id 0 - Tesla T4
+--------------------
+size of adj_train: (13020, 13020)
+#edges in adj_train: 210072.0
+--------------------
+target reduced size:651
+actual reduced size:649
+adj_syn: (649, 649) feat_syn: torch.Size([649, 30])
+{0: [0, 18], 2: [18, 47], 1: [47, 244], 3: [244, 649]}
+Epoch 0, loss_avg: 740061824.0
+Train set results: loss= 1.7342 accuracy= 0.8489
+Test set results: loss= 2.3726 accuracy= 0.8203
+Train set results: loss= 1.7246 accuracy= 0.8126
+Test set results: loss= 2.2845 accuracy= 0.7673
+Train set results: loss= 1.8702 accuracy= 0.8550
+Test set results: loss= 2.5798 accuracy= 0.8358
+Train/Test Mean Accuracy: [array([0.83883769, 0.80780158]), array([0.01872028, 0.02929994])]
+Epoch 50, loss_avg: 97421440.0
+Epoch 100, loss_avg: 22979576.0
+Train set results: loss= 132.3490 accuracy= 0.7921
+Test set results: loss= 188.7972 accuracy= 0.7551
+Train set results: loss= 1.8319 accuracy= 0.8145
+Test set results: loss= 2.4747 accuracy= 0.7588
+Train set results: loss= 3.6853 accuracy= 0.7834
+Test set results: loss= 5.1831 accuracy= 0.7427
+Train/Test Mean Accuracy: [array([0.79667179, 0.75220763]), array([0.01310589, 0.0068989 ])]
+--------------------

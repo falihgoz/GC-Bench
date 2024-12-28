@@ -1,0 +1,9 @@
+--------------------
+Namespace(dataset='fivedirections', mode='test', dist_method='GCond', dist_ratio=0.008, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_test_mode(fivedirections, <class 'utils_apt.gnn_models.GCN'>):
+Ready for testing.
+True Positives/False Positives/False Negatives/True Negatives: 91/11/335/360830
+Accuracy: 1.0, Precision: 0.89, Recall: 0.21, Fscore: 0.34
+****Done - Execution of function main_test_mode
+--------------------

@@ -1,0 +1,1344 @@
+------------------------------------------------------------
+-------------------- 2024-12-27 08:00:37 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.05 > exp_out/run_1GC_trace_SGDD_0.05_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.05
+-------------------- 2024-12-27 08:00:49 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:00:49 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.05 > exp_out/run_2DTC_train_trace_SGDD_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.05
+-------------------- 2024-12-27 08:00:53 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:00:53 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.05 > exp_out/run_3DTC_test_trace_SGDD_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.05
+-------------------- 2024-12-27 08:00:58 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:00:58 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.03 > exp_out/run_1GC_trace_SGDD_0.03_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.03
+-------------------- 2024-12-27 08:01:06 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:01:06 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.03 > exp_out/run_2DTC_train_trace_SGDD_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.03
+-------------------- 2024-12-27 08:01:10 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:01:10 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.03 > exp_out/run_3DTC_test_trace_SGDD_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.03
+-------------------- 2024-12-27 08:01:15 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:01:15 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.01 > exp_out/run_1GC_trace_SGDD_0.01_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.01
+-------------------- 2024-12-27 08:12:51 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:12:51 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.01 > exp_out/run_2DTC_train_trace_SGDD_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.01
+-------------------- 2024-12-27 08:12:57 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:12:57 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.01 > exp_out/run_3DTC_test_trace_SGDD_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.01
+-------------------- 2024-12-27 08:13:07 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:13:07 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.008 > exp_out/run_1GC_trace_SGDD_0.008_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.008
+-------------------- 2024-12-27 08:20:30 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:20:30 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.008 > exp_out/run_2DTC_train_trace_SGDD_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.008
+-------------------- 2024-12-27 08:20:35 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:20:35 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.008 > exp_out/run_3DTC_test_trace_SGDD_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.008
+-------------------- 2024-12-27 08:20:45 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:20:45 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.006 > exp_out/run_1GC_trace_SGDD_0.006_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.006
+-------------------- 2024-12-27 08:25:33 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:25:33 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.006 > exp_out/run_2DTC_train_trace_SGDD_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.006
+-------------------- 2024-12-27 08:25:38 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:25:38 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.006 > exp_out/run_3DTC_test_trace_SGDD_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.006
+-------------------- 2024-12-27 08:25:48 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:25:48 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.004 > exp_out/run_1GC_trace_SGDD_0.004_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.004
+-------------------- 2024-12-27 08:28:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:28:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.004 > exp_out/run_2DTC_train_trace_SGDD_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.004
+-------------------- 2024-12-27 08:28:42 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:28:42 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.004 > exp_out/run_3DTC_test_trace_SGDD_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.004
+-------------------- 2024-12-27 08:28:52 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:28:52 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.002 > exp_out/run_1GC_trace_SGDD_0.002_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset trace --reduction_rate 0.002
+-------------------- 2024-12-27 08:30:33 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:30:33 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.002 > exp_out/run_2DTC_train_trace_SGDD_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method SGDD --dist_ratio 0.002
+-------------------- 2024-12-27 08:30:39 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:30:39 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.002 > exp_out/run_3DTC_test_trace_SGDD_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method SGDD --dist_ratio 0.002
+-------------------- 2024-12-27 08:30:49 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:30:49 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.05 > exp_out/run_1GC_trace_GCond_0.05_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.05
+-------------------- 2024-12-27 08:31:00 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:31:00 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.05 > exp_out/run_2DTC_train_trace_GCond_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.05
+-------------------- 2024-12-27 08:31:04 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:31:04 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.05 > exp_out/run_3DTC_test_trace_GCond_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.05
+-------------------- 2024-12-27 08:31:09 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 08:31:09 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.03 > exp_out/run_1GC_trace_GCond_0.03_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.03
+-------------------- 2024-12-27 09:00:15 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:00:15 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.03 > exp_out/run_2DTC_train_trace_GCond_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.03
+-------------------- 2024-12-27 09:00:35 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:00:35 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.03 > exp_out/run_3DTC_test_trace_GCond_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.03
+-------------------- 2024-12-27 09:00:45 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:00:45 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.01 > exp_out/run_1GC_trace_GCond_0.01_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.01
+-------------------- 2024-12-27 09:04:32 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:04:32 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.01 > exp_out/run_2DTC_train_trace_GCond_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.01
+-------------------- 2024-12-27 09:04:38 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:04:38 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.01 > exp_out/run_3DTC_test_trace_GCond_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.01
+-------------------- 2024-12-27 09:04:47 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:04:47 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.008 > exp_out/run_1GC_trace_GCond_0.008_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.008
+-------------------- 2024-12-27 09:07:33 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:07:33 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.008 > exp_out/run_2DTC_train_trace_GCond_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.008
+-------------------- 2024-12-27 09:07:39 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:07:39 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.008 > exp_out/run_3DTC_test_trace_GCond_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.008
+-------------------- 2024-12-27 09:07:49 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:07:49 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.006 > exp_out/run_1GC_trace_GCond_0.006_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.006
+-------------------- 2024-12-27 09:09:55 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:09:55 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.006 > exp_out/run_2DTC_train_trace_GCond_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.006
+-------------------- 2024-12-27 09:10:01 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:10:01 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.006 > exp_out/run_3DTC_test_trace_GCond_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.006
+-------------------- 2024-12-27 09:10:11 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:10:11 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.004 > exp_out/run_1GC_trace_GCond_0.004_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.004
+-------------------- 2024-12-27 09:11:43 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:11:43 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.004 > exp_out/run_2DTC_train_trace_GCond_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.004
+-------------------- 2024-12-27 09:11:49 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:11:49 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.004 > exp_out/run_3DTC_test_trace_GCond_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.004
+-------------------- 2024-12-27 09:11:59 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:11:59 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.002 > exp_out/run_1GC_trace_GCond_0.002_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset trace --reduction_rate 0.002
+-------------------- 2024-12-27 09:13:15 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:13:15 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.002 > exp_out/run_2DTC_train_trace_GCond_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCond --dist_ratio 0.002
+-------------------- 2024-12-27 09:13:20 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:13:20 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.002 > exp_out/run_3DTC_test_trace_GCond_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCond --dist_ratio 0.002
+-------------------- 2024-12-27 09:13:30 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:13:30 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.05 > exp_out/run_1GC_trace_GCDM_0.05_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.05
+-------------------- 2024-12-27 09:13:41 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:13:41 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.05 > exp_out/run_2DTC_train_trace_GCDM_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.05
+-------------------- 2024-12-27 09:13:46 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:13:46 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.05 > exp_out/run_3DTC_test_trace_GCDM_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.05
+-------------------- 2024-12-27 09:13:51 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:13:51 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.03 > exp_out/run_1GC_trace_GCDM_0.03_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.03
+-------------------- 2024-12-27 09:16:58 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:16:58 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.03 > exp_out/run_2DTC_train_trace_GCDM_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.03
+-------------------- 2024-12-27 09:17:15 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:17:15 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.03 > exp_out/run_3DTC_test_trace_GCDM_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.03
+-------------------- 2024-12-27 09:17:25 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:17:25 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.01 > exp_out/run_1GC_trace_GCDM_0.01_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.01
+-------------------- 2024-12-27 09:19:30 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:19:30 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.01 > exp_out/run_2DTC_train_trace_GCDM_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.01
+-------------------- 2024-12-27 09:19:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:19:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.01 > exp_out/run_3DTC_test_trace_GCDM_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.01
+-------------------- 2024-12-27 09:19:46 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:19:46 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.008 > exp_out/run_1GC_trace_GCDM_0.008_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.008
+-------------------- 2024-12-27 09:21:48 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:21:48 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.008 > exp_out/run_2DTC_train_trace_GCDM_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.008
+-------------------- 2024-12-27 09:21:54 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:21:54 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.008 > exp_out/run_3DTC_test_trace_GCDM_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.008
+-------------------- 2024-12-27 09:22:04 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:22:04 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.006 > exp_out/run_1GC_trace_GCDM_0.006_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.006
+-------------------- 2024-12-27 09:24:05 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:24:05 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.006 > exp_out/run_2DTC_train_trace_GCDM_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.006
+-------------------- 2024-12-27 09:24:10 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:24:10 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.006 > exp_out/run_3DTC_test_trace_GCDM_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.006
+-------------------- 2024-12-27 09:24:20 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:24:20 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.004 > exp_out/run_1GC_trace_GCDM_0.004_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.004
+-------------------- 2024-12-27 09:26:20 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:26:20 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.004 > exp_out/run_2DTC_train_trace_GCDM_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.004
+-------------------- 2024-12-27 09:26:25 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:26:25 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.004 > exp_out/run_3DTC_test_trace_GCDM_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.004
+-------------------- 2024-12-27 09:26:35 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:26:35 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.002 > exp_out/run_1GC_trace_GCDM_0.002_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset trace --reduction_rate 0.002
+-------------------- 2024-12-27 09:28:33 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:28:33 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.002 > exp_out/run_2DTC_train_trace_GCDM_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method GCDM --dist_ratio 0.002
+-------------------- 2024-12-27 09:28:39 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:28:39 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.002 > exp_out/run_3DTC_test_trace_GCDM_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method GCDM --dist_ratio 0.002
+-------------------- 2024-12-27 09:28:49 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:28:49 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.05 > exp_out/run_1GC_trace_herding_0.05_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.05
+-------------------- 2024-12-27 09:29:52 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:29:52 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.05 > exp_out/run_2DTC_train_trace_herding_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.05
+-------------------- 2024-12-27 09:29:57 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:29:57 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.05 > exp_out/run_3DTC_test_trace_herding_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.05
+-------------------- 2024-12-27 09:30:07 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:30:07 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.03 > exp_out/run_1GC_trace_herding_0.03_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.03
+-------------------- 2024-12-27 09:31:03 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:31:03 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.03 > exp_out/run_2DTC_train_trace_herding_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.03
+-------------------- 2024-12-27 09:31:08 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:31:08 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.03 > exp_out/run_3DTC_test_trace_herding_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.03
+-------------------- 2024-12-27 09:31:18 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:31:18 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.01 > exp_out/run_1GC_trace_herding_0.01_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.01
+-------------------- 2024-12-27 09:32:06 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:32:06 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.01 > exp_out/run_2DTC_train_trace_herding_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.01
+-------------------- 2024-12-27 09:32:11 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:32:11 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.01 > exp_out/run_3DTC_test_trace_herding_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.01
+-------------------- 2024-12-27 09:32:21 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:32:21 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.008 > exp_out/run_1GC_trace_herding_0.008_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.008
+-------------------- 2024-12-27 09:33:09 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:33:09 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.008 > exp_out/run_2DTC_train_trace_herding_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.008
+-------------------- 2024-12-27 09:33:14 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:33:14 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.008 > exp_out/run_3DTC_test_trace_herding_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.008
+-------------------- 2024-12-27 09:33:24 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:33:24 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.006 > exp_out/run_1GC_trace_herding_0.006_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.006
+-------------------- 2024-12-27 09:34:11 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:34:11 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.006 > exp_out/run_2DTC_train_trace_herding_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.006
+-------------------- 2024-12-27 09:34:16 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:34:16 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.006 > exp_out/run_3DTC_test_trace_herding_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.006
+-------------------- 2024-12-27 09:34:26 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:34:26 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.004 > exp_out/run_1GC_trace_herding_0.004_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.004
+-------------------- 2024-12-27 09:35:12 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:35:12 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.004 > exp_out/run_2DTC_train_trace_herding_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.004
+-------------------- 2024-12-27 09:35:17 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:35:17 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.004 > exp_out/run_3DTC_test_trace_herding_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.004
+-------------------- 2024-12-27 09:35:27 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:35:27 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.002 > exp_out/run_1GC_trace_herding_0.002_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset trace --reduction_rate 0.002
+-------------------- 2024-12-27 09:36:13 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:36:13 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.002 > exp_out/run_2DTC_train_trace_herding_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method herding --dist_ratio 0.002
+-------------------- 2024-12-27 09:36:18 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:36:18 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.002 > exp_out/run_3DTC_test_trace_herding_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method herding --dist_ratio 0.002
+-------------------- 2024-12-27 09:36:28 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:36:28 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.05 > exp_out/run_1GC_trace_kcenter_0.05_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.05
+-------------------- 2024-12-27 09:37:26 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:37:26 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.05 > exp_out/run_2DTC_train_trace_kcenter_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.05
+-------------------- 2024-12-27 09:37:31 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:37:31 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.05 > exp_out/run_3DTC_test_trace_kcenter_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.05
+-------------------- 2024-12-27 09:37:41 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:37:41 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.03 > exp_out/run_1GC_trace_kcenter_0.03_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.03
+-------------------- 2024-12-27 09:38:30 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:38:30 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.03 > exp_out/run_2DTC_train_trace_kcenter_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.03
+-------------------- 2024-12-27 09:38:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:38:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.03 > exp_out/run_3DTC_test_trace_kcenter_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.03
+-------------------- 2024-12-27 09:38:46 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:38:46 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.01 > exp_out/run_1GC_trace_kcenter_0.01_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.01
+-------------------- 2024-12-27 09:39:31 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:39:31 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.01 > exp_out/run_2DTC_train_trace_kcenter_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.01
+-------------------- 2024-12-27 09:39:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:39:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.01 > exp_out/run_3DTC_test_trace_kcenter_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.01
+-------------------- 2024-12-27 09:39:46 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:39:46 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.008 > exp_out/run_1GC_trace_kcenter_0.008_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.008
+-------------------- 2024-12-27 09:40:31 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:40:31 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.008 > exp_out/run_2DTC_train_trace_kcenter_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.008
+-------------------- 2024-12-27 09:40:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:40:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.008 > exp_out/run_3DTC_test_trace_kcenter_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.008
+-------------------- 2024-12-27 09:40:46 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:40:46 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.006 > exp_out/run_1GC_trace_kcenter_0.006_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.006
+-------------------- 2024-12-27 09:41:31 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:41:31 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.006 > exp_out/run_2DTC_train_trace_kcenter_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.006
+-------------------- 2024-12-27 09:41:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:41:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.006 > exp_out/run_3DTC_test_trace_kcenter_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.006
+-------------------- 2024-12-27 09:41:46 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:41:46 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.004 > exp_out/run_1GC_trace_kcenter_0.004_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.004
+-------------------- 2024-12-27 09:42:31 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:42:31 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.004 > exp_out/run_2DTC_train_trace_kcenter_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.004
+-------------------- 2024-12-27 09:42:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:42:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.004 > exp_out/run_3DTC_test_trace_kcenter_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.004
+-------------------- 2024-12-27 09:42:46 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:42:46 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.002 > exp_out/run_1GC_trace_kcenter_0.002_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset trace --reduction_rate 0.002
+-------------------- 2024-12-27 09:43:31 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:43:31 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.002 > exp_out/run_2DTC_train_trace_kcenter_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method kcenter --dist_ratio 0.002
+-------------------- 2024-12-27 09:43:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:43:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.002 > exp_out/run_3DTC_test_trace_kcenter_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method kcenter --dist_ratio 0.002
+-------------------- 2024-12-27 09:43:46 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:43:46 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.05 > exp_out/run_1GC_trace_random_0.05_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.05
+-------------------- 2024-12-27 09:44:31 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:44:31 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.05 > exp_out/run_2DTC_train_trace_random_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.05
+-------------------- 2024-12-27 09:44:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:44:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.05 > exp_out/run_3DTC_test_trace_random_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.05
+-------------------- 2024-12-27 09:44:46 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:44:46 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.03 > exp_out/run_1GC_trace_random_0.03_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.03
+-------------------- 2024-12-27 09:45:30 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:45:30 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.03 > exp_out/run_2DTC_train_trace_random_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.03
+-------------------- 2024-12-27 09:45:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:45:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.03 > exp_out/run_3DTC_test_trace_random_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.03
+-------------------- 2024-12-27 09:45:45 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:45:45 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.01 > exp_out/run_1GC_trace_random_0.01_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.01
+-------------------- 2024-12-27 09:46:30 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:46:30 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.01 > exp_out/run_2DTC_train_trace_random_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.01
+-------------------- 2024-12-27 09:46:35 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:46:35 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.01 > exp_out/run_3DTC_test_trace_random_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.01
+-------------------- 2024-12-27 09:46:45 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:46:45 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.008 > exp_out/run_1GC_trace_random_0.008_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.008
+-------------------- 2024-12-27 09:47:30 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:47:30 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.008 > exp_out/run_2DTC_train_trace_random_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.008
+-------------------- 2024-12-27 09:47:35 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:47:35 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.008 > exp_out/run_3DTC_test_trace_random_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.008
+-------------------- 2024-12-27 09:47:45 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:47:45 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.006 > exp_out/run_1GC_trace_random_0.006_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.006
+-------------------- 2024-12-27 09:48:30 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:48:30 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.006 > exp_out/run_2DTC_train_trace_random_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.006
+-------------------- 2024-12-27 09:48:35 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:48:35 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.006 > exp_out/run_3DTC_test_trace_random_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.006
+-------------------- 2024-12-27 09:48:45 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:48:45 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.004 > exp_out/run_1GC_trace_random_0.004_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.004
+-------------------- 2024-12-27 09:49:30 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:49:30 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.004 > exp_out/run_2DTC_train_trace_random_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.004
+-------------------- 2024-12-27 09:49:35 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:49:35 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.004 > exp_out/run_3DTC_test_trace_random_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.004
+-------------------- 2024-12-27 09:49:45 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:49:45 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.002 > exp_out/run_1GC_trace_random_0.002_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset trace --reduction_rate 0.002
+-------------------- 2024-12-27 09:50:29 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:50:29 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.002 > exp_out/run_2DTC_train_trace_random_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode train --dist_method random --dist_ratio 0.002
+-------------------- 2024-12-27 09:50:35 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:50:35 --------------------
+Will run command python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.002 > exp_out/run_3DTC_test_trace_random_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset trace --mode test --dist_method random --dist_ratio 0.002
+-------------------- 2024-12-27 09:50:44 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 09:50:44 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.05 > exp_out/run_1GC_fivedirections_SGDD_0.05_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.05
+-------------------- 2024-12-27 10:00:41 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:00:41 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.05 > exp_out/run_2DTC_train_fivedirections_SGDD_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.05
+-------------------- 2024-12-27 10:00:47 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:00:47 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.05 > exp_out/run_3DTC_test_fivedirections_SGDD_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.05
+-------------------- 2024-12-27 10:00:56 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:00:56 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.03 > exp_out/run_1GC_fivedirections_SGDD_0.03_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.03
+-------------------- 2024-12-27 10:05:14 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:05:14 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.03 > exp_out/run_2DTC_train_fivedirections_SGDD_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.03
+-------------------- 2024-12-27 10:05:19 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:05:19 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.03 > exp_out/run_3DTC_test_fivedirections_SGDD_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.03
+-------------------- 2024-12-27 10:05:28 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:05:28 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.01 > exp_out/run_1GC_fivedirections_SGDD_0.01_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.01
+-------------------- 2024-12-27 10:07:02 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:07:02 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.01 > exp_out/run_2DTC_train_fivedirections_SGDD_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.01
+-------------------- 2024-12-27 10:07:07 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:07:07 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.01 > exp_out/run_3DTC_test_fivedirections_SGDD_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.01
+-------------------- 2024-12-27 10:07:16 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:07:16 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.008 > exp_out/run_1GC_fivedirections_SGDD_0.008_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.008
+-------------------- 2024-12-27 10:08:40 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:08:40 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.008 > exp_out/run_2DTC_train_fivedirections_SGDD_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.008
+-------------------- 2024-12-27 10:08:45 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:08:45 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.008 > exp_out/run_3DTC_test_fivedirections_SGDD_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.008
+-------------------- 2024-12-27 10:08:54 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:08:54 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.006 > exp_out/run_1GC_fivedirections_SGDD_0.006_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.006
+-------------------- 2024-12-27 10:10:22 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:10:22 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.006 > exp_out/run_2DTC_train_fivedirections_SGDD_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.006
+-------------------- 2024-12-27 10:10:27 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:10:27 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.006 > exp_out/run_3DTC_test_fivedirections_SGDD_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.006
+-------------------- 2024-12-27 10:10:36 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:10:36 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.004 > exp_out/run_1GC_fivedirections_SGDD_0.004_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.004
+-------------------- 2024-12-27 10:11:58 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:11:58 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.004 > exp_out/run_2DTC_train_fivedirections_SGDD_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.004
+-------------------- 2024-12-27 10:12:03 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:12:03 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.004 > exp_out/run_3DTC_test_fivedirections_SGDD_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.004
+-------------------- 2024-12-27 10:12:12 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:12:12 --------------------
+Will run command python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.002 > exp_out/run_1GC_fivedirections_SGDD_0.002_.txt
+Successfull: python flash_detection/distillation_main.py --method SGDD --dataset fivedirections --reduction_rate 0.002
+-------------------- 2024-12-27 10:13:23 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:13:23 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.002 > exp_out/run_2DTC_train_fivedirections_SGDD_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method SGDD --dist_ratio 0.002
+-------------------- 2024-12-27 10:13:29 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:13:29 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.002 > exp_out/run_3DTC_test_fivedirections_SGDD_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method SGDD --dist_ratio 0.002
+-------------------- 2024-12-27 10:13:38 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:13:38 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.05 > exp_out/run_1GC_fivedirections_GCond_0.05_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.05
+-------------------- 2024-12-27 10:16:59 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:16:59 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.05 > exp_out/run_2DTC_train_fivedirections_GCond_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.05
+-------------------- 2024-12-27 10:17:05 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:17:05 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.05 > exp_out/run_3DTC_test_fivedirections_GCond_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.05
+-------------------- 2024-12-27 10:17:13 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:17:13 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.03 > exp_out/run_1GC_fivedirections_GCond_0.03_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.03
+-------------------- 2024-12-27 10:19:05 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:19:05 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.03 > exp_out/run_2DTC_train_fivedirections_GCond_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.03
+-------------------- 2024-12-27 10:19:10 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:19:10 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.03 > exp_out/run_3DTC_test_fivedirections_GCond_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.03
+-------------------- 2024-12-27 10:19:19 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:19:19 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.01 > exp_out/run_1GC_fivedirections_GCond_0.01_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.01
+-------------------- 2024-12-27 10:20:34 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:20:34 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.01 > exp_out/run_2DTC_train_fivedirections_GCond_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.01
+-------------------- 2024-12-27 10:20:39 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:20:39 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.01 > exp_out/run_3DTC_test_fivedirections_GCond_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.01
+-------------------- 2024-12-27 10:20:48 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:20:48 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.008 > exp_out/run_1GC_fivedirections_GCond_0.008_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.008
+-------------------- 2024-12-27 10:21:58 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:21:58 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.008 > exp_out/run_2DTC_train_fivedirections_GCond_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.008
+-------------------- 2024-12-27 10:22:03 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:22:03 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.008 > exp_out/run_3DTC_test_fivedirections_GCond_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.008
+-------------------- 2024-12-27 10:22:12 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:22:12 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.006 > exp_out/run_1GC_fivedirections_GCond_0.006_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.006
+-------------------- 2024-12-27 10:23:25 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:23:25 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.006 > exp_out/run_2DTC_train_fivedirections_GCond_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.006
+-------------------- 2024-12-27 10:23:30 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:23:30 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.006 > exp_out/run_3DTC_test_fivedirections_GCond_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.006
+-------------------- 2024-12-27 10:23:39 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:23:39 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.004 > exp_out/run_1GC_fivedirections_GCond_0.004_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.004
+-------------------- 2024-12-27 10:24:47 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:24:47 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.004 > exp_out/run_2DTC_train_fivedirections_GCond_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.004
+-------------------- 2024-12-27 10:24:52 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:24:52 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.004 > exp_out/run_3DTC_test_fivedirections_GCond_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.004
+-------------------- 2024-12-27 10:25:01 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:25:01 --------------------
+Will run command python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.002 > exp_out/run_1GC_fivedirections_GCond_0.002_.txt
+Successfull: python flash_detection/distillation_main.py --method GCond --dataset fivedirections --reduction_rate 0.002
+-------------------- 2024-12-27 10:26:05 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:26:05 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.002 > exp_out/run_2DTC_train_fivedirections_GCond_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCond --dist_ratio 0.002
+-------------------- 2024-12-27 10:26:10 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:26:10 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.002 > exp_out/run_3DTC_test_fivedirections_GCond_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCond --dist_ratio 0.002
+-------------------- 2024-12-27 10:26:19 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:26:19 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.05 > exp_out/run_1GC_fivedirections_GCDM_0.05_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.05
+-------------------- 2024-12-27 10:26:49 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:26:49 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.05 > exp_out/run_2DTC_train_fivedirections_GCDM_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.05
+-------------------- 2024-12-27 10:26:55 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:26:55 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.05 > exp_out/run_3DTC_test_fivedirections_GCDM_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.05
+-------------------- 2024-12-27 10:27:04 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:27:04 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.03 > exp_out/run_1GC_fivedirections_GCDM_0.03_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.03
+-------------------- 2024-12-27 10:27:31 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:27:31 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.03 > exp_out/run_2DTC_train_fivedirections_GCDM_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.03
+-------------------- 2024-12-27 10:27:37 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:27:37 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.03 > exp_out/run_3DTC_test_fivedirections_GCDM_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.03
+-------------------- 2024-12-27 10:27:45 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:27:45 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.01 > exp_out/run_1GC_fivedirections_GCDM_0.01_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.01
+-------------------- 2024-12-27 10:28:11 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:28:11 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.01 > exp_out/run_2DTC_train_fivedirections_GCDM_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.01
+-------------------- 2024-12-27 10:28:16 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:28:16 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.01 > exp_out/run_3DTC_test_fivedirections_GCDM_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.01
+-------------------- 2024-12-27 10:28:25 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:28:25 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.008 > exp_out/run_1GC_fivedirections_GCDM_0.008_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.008
+-------------------- 2024-12-27 10:28:51 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:28:51 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.008 > exp_out/run_2DTC_train_fivedirections_GCDM_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.008
+-------------------- 2024-12-27 10:28:56 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:28:56 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.008 > exp_out/run_3DTC_test_fivedirections_GCDM_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.008
+-------------------- 2024-12-27 10:29:05 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:29:05 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.006 > exp_out/run_1GC_fivedirections_GCDM_0.006_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.006
+-------------------- 2024-12-27 10:29:30 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:29:30 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.006 > exp_out/run_2DTC_train_fivedirections_GCDM_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.006
+-------------------- 2024-12-27 10:29:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:29:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.006 > exp_out/run_3DTC_test_fivedirections_GCDM_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.006
+-------------------- 2024-12-27 10:29:44 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:29:44 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.004 > exp_out/run_1GC_fivedirections_GCDM_0.004_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.004
+-------------------- 2024-12-27 10:30:10 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:30:10 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.004 > exp_out/run_2DTC_train_fivedirections_GCDM_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.004
+-------------------- 2024-12-27 10:30:15 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:30:15 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.004 > exp_out/run_3DTC_test_fivedirections_GCDM_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.004
+-------------------- 2024-12-27 10:30:24 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:30:24 --------------------
+Will run command python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.002 > exp_out/run_1GC_fivedirections_GCDM_0.002_.txt
+Successfull: python flash_detection/distillation_main.py --method GCDM --dataset fivedirections --reduction_rate 0.002
+-------------------- 2024-12-27 10:30:49 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:30:49 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.002 > exp_out/run_2DTC_train_fivedirections_GCDM_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method GCDM --dist_ratio 0.002
+-------------------- 2024-12-27 10:30:54 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:30:54 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.002 > exp_out/run_3DTC_test_fivedirections_GCDM_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method GCDM --dist_ratio 0.002
+-------------------- 2024-12-27 10:31:03 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:31:03 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.05 > exp_out/run_1GC_fivedirections_herding_0.05_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.05
+-------------------- 2024-12-27 10:31:15 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:31:15 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.05 > exp_out/run_2DTC_train_fivedirections_herding_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.05
+-------------------- 2024-12-27 10:31:20 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:31:20 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.05 > exp_out/run_3DTC_test_fivedirections_herding_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.05
+-------------------- 2024-12-27 10:31:29 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:31:29 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.03 > exp_out/run_1GC_fivedirections_herding_0.03_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.03
+-------------------- 2024-12-27 10:31:41 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:31:41 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.03 > exp_out/run_2DTC_train_fivedirections_herding_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.03
+-------------------- 2024-12-27 10:31:46 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:31:46 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.03 > exp_out/run_3DTC_test_fivedirections_herding_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.03
+-------------------- 2024-12-27 10:31:55 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:31:55 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.01 > exp_out/run_1GC_fivedirections_herding_0.01_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.01
+-------------------- 2024-12-27 10:32:06 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:32:06 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.01 > exp_out/run_2DTC_train_fivedirections_herding_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.01
+-------------------- 2024-12-27 10:32:11 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:32:11 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.01 > exp_out/run_3DTC_test_fivedirections_herding_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.01
+-------------------- 2024-12-27 10:32:20 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:32:20 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.008 > exp_out/run_1GC_fivedirections_herding_0.008_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.008
+-------------------- 2024-12-27 10:32:31 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:32:31 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.008 > exp_out/run_2DTC_train_fivedirections_herding_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.008
+-------------------- 2024-12-27 10:32:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:32:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.008 > exp_out/run_3DTC_test_fivedirections_herding_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.008
+-------------------- 2024-12-27 10:32:45 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:32:45 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.006 > exp_out/run_1GC_fivedirections_herding_0.006_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.006
+-------------------- 2024-12-27 10:32:56 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:32:56 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.006 > exp_out/run_2DTC_train_fivedirections_herding_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.006
+-------------------- 2024-12-27 10:33:01 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:33:01 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.006 > exp_out/run_3DTC_test_fivedirections_herding_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.006
+-------------------- 2024-12-27 10:33:10 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:33:10 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.004 > exp_out/run_1GC_fivedirections_herding_0.004_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.004
+-------------------- 2024-12-27 10:33:21 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:33:21 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.004 > exp_out/run_2DTC_train_fivedirections_herding_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.004
+-------------------- 2024-12-27 10:33:26 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:33:26 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.004 > exp_out/run_3DTC_test_fivedirections_herding_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.004
+-------------------- 2024-12-27 10:33:35 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:33:35 --------------------
+Will run command python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.002 > exp_out/run_1GC_fivedirections_herding_0.002_.txt
+Successfull: python flash_detection/distillation_main.py --method herding --dataset fivedirections --reduction_rate 0.002
+-------------------- 2024-12-27 10:33:46 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:33:46 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.002 > exp_out/run_2DTC_train_fivedirections_herding_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method herding --dist_ratio 0.002
+-------------------- 2024-12-27 10:33:51 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:33:51 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.002 > exp_out/run_3DTC_test_fivedirections_herding_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method herding --dist_ratio 0.002
+-------------------- 2024-12-27 10:34:00 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:34:00 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.05 > exp_out/run_1GC_fivedirections_kcenter_0.05_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.05
+-------------------- 2024-12-27 10:34:11 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:34:11 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.05 > exp_out/run_2DTC_train_fivedirections_kcenter_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.05
+-------------------- 2024-12-27 10:34:16 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:34:16 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.05 > exp_out/run_3DTC_test_fivedirections_kcenter_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.05
+-------------------- 2024-12-27 10:34:25 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:34:25 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.03 > exp_out/run_1GC_fivedirections_kcenter_0.03_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.03
+-------------------- 2024-12-27 10:34:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:34:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.03 > exp_out/run_2DTC_train_fivedirections_kcenter_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.03
+-------------------- 2024-12-27 10:34:41 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:34:41 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.03 > exp_out/run_3DTC_test_fivedirections_kcenter_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.03
+-------------------- 2024-12-27 10:34:50 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:34:50 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.01 > exp_out/run_1GC_fivedirections_kcenter_0.01_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.01
+-------------------- 2024-12-27 10:35:01 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:35:01 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.01 > exp_out/run_2DTC_train_fivedirections_kcenter_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.01
+-------------------- 2024-12-27 10:35:06 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:35:06 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.01 > exp_out/run_3DTC_test_fivedirections_kcenter_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.01
+-------------------- 2024-12-27 10:35:15 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:35:15 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.008 > exp_out/run_1GC_fivedirections_kcenter_0.008_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.008
+-------------------- 2024-12-27 10:35:26 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:35:26 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.008 > exp_out/run_2DTC_train_fivedirections_kcenter_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.008
+-------------------- 2024-12-27 10:35:31 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:35:31 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.008 > exp_out/run_3DTC_test_fivedirections_kcenter_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.008
+-------------------- 2024-12-27 10:35:40 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:35:40 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.006 > exp_out/run_1GC_fivedirections_kcenter_0.006_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.006
+-------------------- 2024-12-27 10:35:51 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:35:51 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.006 > exp_out/run_2DTC_train_fivedirections_kcenter_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.006
+-------------------- 2024-12-27 10:35:56 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:35:56 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.006 > exp_out/run_3DTC_test_fivedirections_kcenter_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.006
+-------------------- 2024-12-27 10:36:05 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:36:05 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.004 > exp_out/run_1GC_fivedirections_kcenter_0.004_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.004
+-------------------- 2024-12-27 10:36:16 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:36:16 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.004 > exp_out/run_2DTC_train_fivedirections_kcenter_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.004
+-------------------- 2024-12-27 10:36:21 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:36:21 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.004 > exp_out/run_3DTC_test_fivedirections_kcenter_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.004
+-------------------- 2024-12-27 10:36:29 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:36:29 --------------------
+Will run command python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.002 > exp_out/run_1GC_fivedirections_kcenter_0.002_.txt
+Successfull: python flash_detection/distillation_main.py --method kcenter --dataset fivedirections --reduction_rate 0.002
+-------------------- 2024-12-27 10:36:41 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:36:41 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.002 > exp_out/run_2DTC_train_fivedirections_kcenter_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method kcenter --dist_ratio 0.002
+-------------------- 2024-12-27 10:36:46 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:36:46 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.002 > exp_out/run_3DTC_test_fivedirections_kcenter_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method kcenter --dist_ratio 0.002
+-------------------- 2024-12-27 10:36:55 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:36:55 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.05 > exp_out/run_1GC_fivedirections_random_0.05_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.05
+-------------------- 2024-12-27 10:37:06 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:37:06 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.05 > exp_out/run_2DTC_train_fivedirections_random_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.05
+-------------------- 2024-12-27 10:37:11 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:37:11 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.05 > exp_out/run_3DTC_test_fivedirections_random_0.05_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.05
+-------------------- 2024-12-27 10:37:19 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:37:19 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.03 > exp_out/run_1GC_fivedirections_random_0.03_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.03
+-------------------- 2024-12-27 10:37:30 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:37:30 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.03 > exp_out/run_2DTC_train_fivedirections_random_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.03
+-------------------- 2024-12-27 10:37:36 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:37:36 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.03 > exp_out/run_3DTC_test_fivedirections_random_0.03_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.03
+-------------------- 2024-12-27 10:37:44 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:37:44 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.01 > exp_out/run_1GC_fivedirections_random_0.01_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.01
+-------------------- 2024-12-27 10:37:55 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:37:55 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.01 > exp_out/run_2DTC_train_fivedirections_random_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.01
+-------------------- 2024-12-27 10:38:00 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:38:00 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.01 > exp_out/run_3DTC_test_fivedirections_random_0.01_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.01
+-------------------- 2024-12-27 10:38:09 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:38:09 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.008 > exp_out/run_1GC_fivedirections_random_0.008_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.008
+-------------------- 2024-12-27 10:38:20 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:38:20 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.008 > exp_out/run_2DTC_train_fivedirections_random_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.008
+-------------------- 2024-12-27 10:38:25 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:38:25 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.008 > exp_out/run_3DTC_test_fivedirections_random_0.008_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.008
+-------------------- 2024-12-27 10:38:34 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:38:34 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.006 > exp_out/run_1GC_fivedirections_random_0.006_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.006
+-------------------- 2024-12-27 10:38:45 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:38:45 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.006 > exp_out/run_2DTC_train_fivedirections_random_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.006
+-------------------- 2024-12-27 10:38:50 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:38:50 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.006 > exp_out/run_3DTC_test_fivedirections_random_0.006_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.006
+-------------------- 2024-12-27 10:38:59 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:38:59 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.004 > exp_out/run_1GC_fivedirections_random_0.004_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.004
+-------------------- 2024-12-27 10:39:10 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:39:10 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.004 > exp_out/run_2DTC_train_fivedirections_random_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.004
+-------------------- 2024-12-27 10:39:15 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:39:15 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.004 > exp_out/run_3DTC_test_fivedirections_random_0.004_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.004
+-------------------- 2024-12-27 10:39:24 --------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:39:24 --------------------
+Will run command python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.002 > exp_out/run_1GC_fivedirections_random_0.002_.txt
+Successfull: python flash_detection/distillation_main.py --method random --dataset fivedirections --reduction_rate 0.002
+-------------------- 2024-12-27 10:39:35 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:39:35 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.002 > exp_out/run_2DTC_train_fivedirections_random_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode train --dist_method random --dist_ratio 0.002
+-------------------- 2024-12-27 10:39:40 --------------------
+------------------------------------------------------------
+-------------------- 2024-12-27 10:39:40 --------------------
+Will run command python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.002 > exp_out/run_3DTC_test_fivedirections_random_0.002_.txt
+Successfull: python flash_detection/detection_main.py --dataset fivedirections --mode test --dist_method random --dist_ratio 0.002
+-------------------- 2024-12-27 10:39:49 --------------------
+------------------------------------------------------------

@@ -1,0 +1,29 @@
+--------------------
+Namespace(method='GCond', dataset='fivedirections', reduction_rate=0.008, gpu_id=0, data_dir='data', save=1, save_dir='save', epochs=100, wandb=0, keep_ratio=1.0, seed=15, debug=0, config='config.json', config_dir='configs', section='', wandb_id='', sgc=1, alpha=0, nlayers=2, hidden=256, lr=None, lr_adj=0.01, lr_feat=0.0001, lr_model=0.0001, weight_decay=0.0, dropout=0.0, normalize_features=True, gt=0, inner=0, outer=20, transductive=0, inductive=1, mlp=None, one_step=0, init_way='Random', label_rate=1, dis_metric='ours', beta=0.5, early_stopping=0, max_epochs_without_improvement=200, prune=0.05, mining=0.001, circulation=20, mx_size=100, ep_ratio=0.5, sinkhorn_iter=10, opt_scale=0, coreset_method='kcenter', option=0)
+Torch device: id 0 - Tesla T4
+--------------------
+size of adj_train: (13020, 13020)
+#edges in adj_train: 210072.0
+--------------------
+target reduced size:104
+actual reduced size:104
+adj_syn: (104, 104) feat_syn: torch.Size([104, 30])
+{0: [0, 2], 2: [2, 6], 1: [6, 37], 3: [37, 104]}
+Epoch 0, loss_avg: 0.14204088933765888
+Epoch 50, loss_avg: 0.0693505534902215
+Test set results: loss= 3.3282 accuracy= 0.8535
+tensor(3218.9595, device='cuda:0') tensor(0.2976, device='cuda:0')
+Test set results: loss= 1.1522 accuracy= 0.8569
+tensor(3218.9595, device='cuda:0') tensor(0.2976, device='cuda:0')
+Test set results: loss= 3.1963 accuracy= 0.8726
+tensor(3218.9595, device='cuda:0') tensor(0.2976, device='cuda:0')
+Test: [array([0.86101513]), array([0.00831929])]
+Epoch 100, loss_avg: 0.04488926958292723
+Test set results: loss= 2.4495 accuracy= 0.8551
+tensor(3145.8381, device='cuda:0') tensor(0.2909, device='cuda:0')
+Test set results: loss= 2.9848 accuracy= 0.8565
+tensor(3145.8381, device='cuda:0') tensor(0.2909, device='cuda:0')
+Test set results: loss= 2.6681 accuracy= 0.8553
+tensor(3145.8381, device='cuda:0') tensor(0.2909, device='cuda:0')
+Test: [array([0.85564002]), array([0.00060462])]
+--------------------

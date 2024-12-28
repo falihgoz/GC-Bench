@@ -1,0 +1,48 @@
+--------------------
+Namespace(dataset='fivedirections', mode='train', dist_method='GCDM', dist_ratio=0.01, dist_seed=15, dist_mode='inductive')
+--------------------
+****Executing function main_train_mode(fivedirections, <class 'utils_apt.gnn_models.GCN'>, <class 'torch.optim.adam.Adam'>, GCDM, 0.01):
+Distilled graph will be loaded from: adjacency (save/GCDM/adj_fivedirections_0.01_15.pt), features (save/GCDM/feat_fivedirections_0.01_15.pt), labels (save/GCDM/label_fivedirections_0.01_15.pt)
+Distilled graph is loaded. Adj:torch.Size([128, 128]), features(nodes):torch.Size([128, 30]), labels:torch.Size([128])
+Ready for training.
+1.557313084602356
+Model# 0. 67 nodes still misclassified 
+
+1.3571373224258423
+Model# 1. 26 nodes still misclassified 
+
+1.200408935546875
+Model# 2. 25 nodes still misclassified 
+
+1.1027488708496094
+Model# 3. 20 nodes still misclassified 
+
+1.085201621055603
+Model# 4. 16 nodes still misclassified 
+
+1.0486936569213867
+Model# 5. 14 nodes still misclassified 
+
+0.9323647618293762
+Model# 6. 6 nodes still misclassified 
+
+0.9571237564086914
+Model# 7. 5 nodes still misclassified 
+
+0.9073868989944458
+Model# 8. 3 nodes still misclassified 
+
+0.8998473882675171
+Model# 9. 2 nodes still misclassified 
+
+0.8943809270858765
+Model# 10. 2 nodes still misclassified 
+
+0.8618447184562683
+Model# 11. 2 nodes still misclassified 
+
+0.8082144260406494
+Model# 12. 2 nodes still misclassified 
+
+****Done - Execution of function main_train_mode
+--------------------
